@@ -3,7 +3,7 @@
 let preprocessor = 'sass', // Preprocessor (sass, scss, less, styl)
     fileswatch   = 'html,htm,txt,json,md,woff2', // List of files extensions for watching & hard reload (comma separated)
     imageswatch  = 'jpg,jpeg,png,webp,svg', // List of images extensions for watching & compression (comma separated)
-    baseDir      = 'genion/assets', // Base directory path without «/» at the end
+    baseDir      = 'genio/assets', // Base directory path without «/» at the end
     online       = true; // If «false» - Browsersync will work offline without internet connection
 
 let paths = {
