@@ -55,18 +55,18 @@
 		height: 42px
 		line-height: 42px
 		border-radius: 3px
-		border: 1px solid $button
+		border: 1px solid $button !important
 
 		+r(767)
 			padding: 0 18px
 
 		&:hover
-			border: 1px solid $button
+			border: 1px solid $button !important
 			background: #fff
 			color: $button
 
 		&:active
-			border: 1px solid $button
+			border: 1px solid $button !important
 			background: $button
 
 	&--checkout
@@ -269,6 +269,31 @@
 		text-decoration: none
 		&::before
 			transform: scale(1)
+
+.title
+	display: flex
+	justify-content: space-between
+	margin-bottom: 10px
+	align-items: center
+
+	+r(767)
+		flex-direction: column
+
+	h3
+		font-size: 30px
+		color: #333333
+
+	a
+		font-size: 16px
+		color: #464646
+
+.border
+	border-bottom: 1px solid #f6f6f6
+	height: 1px
+	margin-bottom: 40px
+
+	+r(992)
+		margin-bottom: 20px
 
 //----index-page----
 .header
@@ -728,27 +753,6 @@
 	+r(992)
 		padding-bottom: 25px
 
-	&__title
-		display: flex
-		justify-content: space-between
-		margin-bottom: 10px
-		align-items: center
-
-		+r(767)
-			flex-direction: column
-
-		a
-			font-size: 16px
-			color: #464646
-
-	&__border
-		border-bottom: 1px solid #f6f6f6
-		height: 1px
-		margin-bottom: 40px
-
-		+r(992)
-			margin-bottom: 20px
-
 	&__container
 
 		img
@@ -768,6 +772,9 @@
 			+r(767)
 				line-height: 25px
 				margin-bottom: 15px
+
+			&::last-child
+				margin-bottom: 0
 
 .product
 	&__list
@@ -891,34 +898,6 @@
 	+r(992)
 		padding-bottom: 15px
 
-	&__title
-		display: flex
-		justify-content: space-between
-		margin-bottom: 10px
-		align-items: center
-
-		+r(767)
-			flex-direction: column
-
-		+r(767)
-			flex-direction: column
-
-		h3
-			font-size: 30px
-			color: #333333
-
-		a
-			font-size: 16px
-			color: #464646
-
-	&__border
-		border-bottom: 1px solid #f6f6f6
-		height: 1px
-		margin-bottom: 40px
-
-		+r(992)
-			margin-bottom: 20px
-
 	&__container
 
 		img
@@ -972,31 +951,6 @@
 
 	+r(992)
 		padding-bottom: 15px
-
-	&__title
-		display: flex
-		justify-content: space-between
-		margin-bottom: 10px
-		align-items: center
-
-		+r(767)
-			flex-direction: column
-
-		h3
-			font-size: 30px
-			color: #333333
-
-		a
-			font-size: 16px
-			color: #464646
-
-	&__border
-		border-bottom: 1px solid #f6f6f6
-		height: 1px
-		margin-bottom: 40px
-
-		+r(992)
-			margin-bottom: 20px
 
 	&__container
 
@@ -1053,35 +1007,33 @@
 	+r(992)
 		padding-bottom: 15px
 
-	&__title
-		display: flex
-		justify-content: space-between
-		margin-bottom: 10px
-		align-items: center
-
-		+r(767)
-			flex-direction: column
-
-		h3
-			font-size: 30px
-			color: #333333
-
-		a
-			font-size: 16px
-			color: #464646
-
-	&__border
-		border-bottom: 1px solid #f6f6f6
-		height: 1px
-		margin-bottom: 40px
-
-		+r(992)
-			margin-bottom: 20px
-
 	&__banner
 			width: 100%
 			height: auto
 			margin-bottom: 30px
+
+	&__content
+		ul
+			list-style: disc
+			margin-left: 20px
+			margin-bottom: 24px
+
+			+r(767)
+				margin-bottom: 15px
+
+		li
+			font-size: 16px
+			margin-bottom: 15px
+
+		p
+			font-size: 16px
+			margin-bottom: 24px
+			text-align: justify
+			line-height: 30px
+
+			+r(767)
+				margin-bottom: 15px
+				line-height: 25px
 
 	&__block
 		display: flex
@@ -1106,10 +1058,11 @@
 			padding: 15px
 
 	&__item
-		&:last-child
-			margin-bottom: 0px
 		display: flex
 		margin-bottom: 20px
+
+		&:last-child
+			margin-bottom: 0px
 
 	&__img
 		border: 1px solid #666666
@@ -1128,6 +1081,7 @@
 		flex-direction: column
 		justify-content: space-around
 		margin-left: 20px
+
 		h3
 			font-size: 16px
 
@@ -1154,31 +1108,6 @@
 
 .return
 	padding-top: 90px
-
-	&__title
-		display: flex
-		justify-content: space-between
-		margin-bottom: 10px
-		align-items: center
-
-		+r(767)
-			flex-direction: column
-
-		h3
-			font-size: 30px
-			color: #333333
-
-		a
-			font-size: 16px
-			color: #464646
-
-	&__border
-		border-bottom: 1px solid #f6f6f6
-		height: 1px
-		margin-bottom: 40px
-
-		+r(992)
-			margin-bottom: 20px
 
 	&__container
 
@@ -1394,138 +1323,6 @@
 			+r(767)
 				margin-bottom: 15px
 				line-height: 25px
-
-.cooperation
-	padding-top: 90px
-	padding-bottom: 25px
-
-	+r(992)
-		padding-bottom: 15px
-
-	&__container
-		ul
-			list-style: disc
-			margin-left: 20px
-			margin-bottom: 24px
-
-			+r(767)
-				margin-bottom: 15px
-
-			li
-				font-size: 16px
-				margin-bottom: 15px
-
-		p
-			font-size: 16px
-			margin-bottom: 24px
-			text-align: justify
-			line-height: 30px
-
-			+r(767)
-				margin-bottom: 15px
-				line-height: 25px
-
-	&__title
-		display: flex
-		justify-content: space-between
-		margin-bottom: 10px
-		align-items: center
-
-		+r(767)
-			flex-direction: column
-
-		h3
-			font-size: 30px
-			color: #333333
-
-		a
-			font-size: 16px
-			color: #464646
-
-	&__border
-		border-bottom: 1px solid #f6f6f6
-		height: 1px
-		margin-bottom: 40px
-
-		+r(992)
-			margin-bottom: 20px
-
-	&__banner
-			width: 100%
-			height: auto
-			margin-bottom: 30px
-
-			+r(992)
-				margin-bottom: 15px
-
-	&__block
-		display: flex
-		justify-content: space-between
-		margin-bottom: 30px
-
-		+r(767)
-			flex-direction: column
-			gap: 30px
-
-	&__info
-		padding: 50px
-		background: #f6f6f6
-		width: 49%
-		display: flex
-		flex-direction: column
-
-		+r(767)
-			width: 100%
-
-		+r(576)
-			padding: 15px
-
-	&__item
-		&:last-child
-			margin-bottom: 0px
-		display: flex
-		margin-bottom: 20px
-
-	&__img
-		border: 1px solid #666666
-		line-height: 62px
-		text-align: center
-		width: 64px
-		height: 64px
-		border-radius: 100px
-
-		img
-			width: 32px
-			height: 32px
-
-	&__text
-		display: flex
-		flex-direction: column
-		justify-content: space-around
-		margin-left: 20px
-		h3
-			font-size: 16px
-
-		p
-			font-size: 14px
-
-		a
-			@extend .link
-			font-size: 14px
-			color: #333333
-
-	&__form
-		padding: 50px
-		background: #f6f6f6
-		width: 49%
-		display: flex
-		flex-direction: column
-
-		+r(767)
-			width: 100%
-
-		+r(576)
-			padding: 15px
 
 .comparison
 	padding-top: 90px
@@ -3028,8 +2825,7 @@
 					font-weight: 700
 
 
-
-// -----MODAL-----
+// ----- MODAL -----
 .modal
 	display: flex
 	visibility: hidden
@@ -3153,7 +2949,7 @@
 				color: #128CDB
 				display: block
 
-.form
+.form, .single
 	position: relative
 	max-width: 90%
 	+pseudo
@@ -3171,7 +2967,7 @@
 			width: 45%
 
 		+r(767)
-			width: 50% 
+			width: 50%
 
 		+r(576)
 			width: 100%
@@ -3187,9 +2983,10 @@
 		width: 100%
 
 	&--full
-		max-width: 100% 
+		max-width: 100%
 
-	&__tell, &__mail
+	&__tell,
+	&__mail
 		width: 100% !important
 
 		+r(1200)
@@ -3224,7 +3021,6 @@
 		+transition
 
 	&._sending
-
 		&::after
 			opacity: 1
 			visibility: visible
@@ -3467,7 +3263,6 @@
 		&:focus
 			box-shadow: none
 
-
 .preloader 
 	position: fixed
 	left: 0
@@ -3504,5 +3299,54 @@
 
 .loaded .preloader 
 	display: none
+
+// ----- WP nav -----
+.customize-support
+	.header
+		top: 32px
+
+		+r(782)
+			top: 46px
+
+#wpadminbar
+		+r(600)
+			position: fixed
+
+
+.form-group
+	position: relative
+
+.caldera_ajax_error_block
+	position: absolute
+	bottom: -15px
+	right: 25px
+	left: 25px
+	transition: all .3s
+	animation: error .3s linear 1 forwards
+	color: #fff !important
+	text-align: center
+	font-size: 12px
+	font-weight: 600
+	background-color: red
+	border-radius: 10px
+	z-index: 1
+	margin: 0 !important
+	padding: 2px
+
+	&::before
+		content: ''
+		position: absolute
+		left: 50%
+		top: -8px
+		margin-left: -2px
+		border-bottom: 4px solid red
+		border-left: 4px solid transparent
+		border-right: 4px solid transparent
+		border-top: 4px solid transparent
+
+.caldera-grid .form-group,
+.cf-color-picker .form-group
+	margin-bottom: 25px !important
+
 
 

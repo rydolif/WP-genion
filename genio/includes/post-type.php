@@ -1,7 +1,4 @@
 <?php 
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-}
 
 //------------------Register Custom Post портфолио----------------------
 	// function new_post_type() {

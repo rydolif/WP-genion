@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	};
 	headerFixed('.header', '.header--active');
-	headerFixed('.basket', '.basket--active');
+	// headerFixed('.basket', '.basket--active');
 
 //----------------------TABS-JS----------------------
 	const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {

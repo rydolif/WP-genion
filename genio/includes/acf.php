@@ -1,10 +1,5 @@
 <?php 
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
-
-
 // ------------------настройка- ACF---------------------
   if( function_exists('acf_add_options_page') ) {
 
