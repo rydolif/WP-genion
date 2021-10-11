@@ -1,0 +1,89 @@
+
+//----------------------fonts---------------------
+$f_title: 'Gothic', sans-serif
+$f_logo: 'Ginza', sans-serif
+$fonts: 'Noto', sans-serif
+
+//---------------------end-fonts---------------------
+
+//----------------------color---------------------
+$accent: #128cdb
+$text: #000
+$dark: #333
+$title: #565656
+$background: #f4f4f4
+$button: #262626
+//---------------------end-color---------------------
+
+body
+	overflow-x: hidden
+	position: relative
+	min-width: 320px
+	font-family: $fonts
+	font-size: 14px
+	color: $text
+	line-height: 1.4
+	font-weight: 400
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+::selection
+	background-color: $accent
+	color: #fff
+
+::placeholder
+	color: #666
+	
+h1, h2, h3, h4, h5, h6
+	font-weight: 700
+	line-height: 1.2
+	margin: 0
+	padding: 0
+
+
+ul
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+b, strong
+	font-weight: 700
+
+p
+	margin: 0
+	padding: 0
+
+a,
+button
+	+transition
+
+	&:focus,
+	&:hover
+		outline: none
+		text-decoration: none
+		outline: none
+
+
+input, textarea, select
+	+transition
+	outline: none
+	box-shadow: none
+	border: none
+	// -webkit-appearance: none
+	
+	&:focus:required:invalid
+		border-color: red
+		outline: none
+		box-shadow: none
+		-webkit-appearance: none
+
+	&:required:valid
+		border-color: green
+		outline: none
+		box-shadow: none
+		-webkit-appearance: none
+
+	&::placeholder
+		color: $text
