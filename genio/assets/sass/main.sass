@@ -228,6 +228,7 @@
 	font-size: 26px
 	font-weight: 400
 	margin-bottom: 18px
+	color: $text
 
 	+r(1200)
 		font-size: 20px
@@ -643,13 +644,31 @@
 			+transition
 
 .genio
+
+	a
+		display: block
+
+	&__grid
+		display: flex
+		flex-wrap: wrap
+		gap: 12px
+
 	&__item
+		width: calc(50% - 6px)
 		padding: 50px 30px
 		text-align: center
 		margin-bottom: 12px
 
 		+r(992)
 			padding: 25px 0
+
+		&:hover
+			button
+				opacity: 1
+				+transition
+
+		&--full
+			width: 100%
 
 		&_style3
 			background: rgb(216, 216, 216)
@@ -679,35 +698,8 @@
 			h2, h3
 				color: $text
 
-		&_style1
-			background: rgb(0, 0, 0)
-			h2, h3
-				color: #f8f8f8
-			p
-				color: #FFFFFF
-
-		&_style2
-			background: rgb(248, 248, 248)
-			h2, h3
-				color: $text
-
-	&__grid
-		display: grid
-		grid-template-columns: 1fr 1fr
-		grid-column-gap: 12px
-
-		+r(767)
-			grid-template-columns: 100%
-			grid-column-gap: 0
-
-	&__hover
-		&:hover button
-			opacity: 1
-			+transition
-
 	&__price
 		font-size: 22px
-		color: #000000
 		opacity: 0
 		cursor: pointer
 		display: flex
@@ -718,34 +710,20 @@
 		margin-right: 5%
 		background: transparent
 		border: none
-		+transition
-
-		p
-			display: flex
-			align-items: center
-			justify-content: flex-end
 
 		&:hover
-			color: #e49506 
-			svg
-				fill: #e49506 
-				+transition
+			color: $accent !important
+
+			svg, path
+				fill: $accent !important
 
 		svg
 			width: 23px
 			height: 23px
+
+		svg, path
 			+transition
 
-	&__fill
-		color: #fff
-		+transition
-		&:hover
-			color: #e49506 
-			+transition
-
-		svg
-			fill: #FFF
-			+transition
 
 .company
 	padding: 90px 0
@@ -2823,7 +2801,6 @@
 
 			span
 					font-weight: 700
-
 
 // ----- MODAL -----
 .modal
