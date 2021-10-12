@@ -12,15 +12,6 @@
   }
   add_action( 'wp_enqueue_scripts', 'ewa_scripts' );
 
-//------------------подключение шрифтов------------------
-  //  function wph_add_google_fonts() {
-  //      if ( !is_admin() ) {
-  //          wp_register_style('Philosopher', 'https://fonts.googleapis.com/css?family=Neucha|Philosopher:400,400i,700,700i&display=swap&subset=cyrillic&display=swap', array(), null, 'all');
-  //          wp_enqueue_style('Philosopher');
-  //      }
-  //  }
-  //  add_action('wp_enqueue_scripts', 'wph_add_google_fonts');
-
 
 //------------------підключення додаткових функцій для постов ----------------------
   function myfirsttheme_setup() {
