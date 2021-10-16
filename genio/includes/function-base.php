@@ -9,7 +9,6 @@
 	// 		wp_enqueue_script( 'jquery' );
 	// }
 	// add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
-	
 
 function remove_menus(){
   // remove_menu_page( 'index.php' );                  //Консоль
@@ -25,3 +24,7 @@ function remove_menus(){
 }
 add_action( 'admin_menu', 'remove_menus' );
 
+//------------------меню----------------------
+register_nav_menus(array(
+	'menu' => 'Навигация по сайту'
+));

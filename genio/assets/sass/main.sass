@@ -412,7 +412,7 @@
 		margin-right: 10px
 
 		&:hover
-			.header__mincart
+			.header__mincart, .widget_shopping_cart
 				opacity: 1
 				visibility: inherit
 				margin-top: 30px
@@ -421,7 +421,6 @@
 			.header__mincartempty
 				opacity: 1
 				visibility: inherit
-				margin-top: 30px
 				+transition
 
 		svg
@@ -451,15 +450,15 @@
 			top: -11px
 			left: 18px
 
-	&__mincart
+	&__mincart, .widget_shopping_cart
 		position: absolute
 		right: 0
-		// opacity: 0
-		// visibility: hidden
 		margin-top: 0
 		width: 270px
 		background: #16171f
 		z-index: 2000
+		opacity: 0
+		visibility: hidden
 		+transition
 
 		+r(576)
@@ -467,9 +466,9 @@
 
 		&_wrap
 			overflow: auto
-			padding-top: 15px
-			margin-bottom: 139px
-			max-height: calc( 100vh - 200px )
+			padding-top: 15px !important
+			margin-bottom: 139px !important
+			max-height: calc( 560px - 200px ) !important
 
 			/* полоса прокрутки (скроллбар) */
 			&::-webkit-scrollbar
@@ -502,23 +501,31 @@
 		&_product
 			display: flex
 			align-items: center
-			margin-bottom: 20px
-			padding: 0 15px
+			margin-bottom: 20px !important
+			padding: 0 15px !important
 			gap: 10px
 
 			&:last-child
 				margin-bottom: 0px
 
 		&_img
-			width: 70px
-			height: 70px
+			width: 70px !important
+			height: 70px !important
 			display: block
 			flex-shrink: 0
 
+			&:hover
+				transform: scale(.95)
+
+			&:active
+				transform: scale(1.05)
+
 			img
-				width: 100%
-				height: 100%
+				width: 100% !important
+				height: 100% !important
 				object-fit: cover
+				float: none !important
+				margin-left: 0 !important
 
 		&_close
 			position: relative
@@ -583,6 +590,9 @@
 			color: #FFF
 			font-weight: 400
 
+			&:hover
+				color: $accent
+
 		p
 			font-size: 20px
 			font-style: normal
@@ -619,32 +629,41 @@
 		align-items: center
 		margin-bottom: 10px
 
+		span
+			font-size: 20px
+			color: #fff
+
+		strong
+			color: #fff
+			font-size: 15px
+			font-weight: 400
+
 	&__line
 		height: 1px
 		width: 100%
 		background: #FFF
 		margin: 10px 0
 
-	&__button
-		display: block
-		width: 100%
-		font-size: 14px
-		font-style: normal
-		color: #FFF
-		text-align: center
-		border: 1px solid #fff
-		border-radius: 50px
-		padding: 5px 15px
+	&__button, .button
+		display: block !important
+		width: 100% !important
+		font-size: 14px !important
+		color: #FFF !important
+		text-align: center !important
+		border: 1px solid #fff !important
+		border-radius: 50px !important
+		padding: 5px 15px !important
+		background: transparent !important
+		font-weight: 400 !important
 		+transition
 
 		&:hover
-			background: #fff
-			color: $text
+			background: #fff !important
+			color: $text !important
 			+transition
 
 
 .genio
-
 	a
 		display: block
 
@@ -657,10 +676,12 @@
 		width: calc(50% - 6px)
 		padding: 50px 30px
 		text-align: center
-		margin-bottom: 12px
 
 		+r(992)
-			padding: 25px 0
+			padding: 25px 15px
+
+		+r(576)
+			width: 100%
 
 		&:hover
 			.genio__price
@@ -669,12 +690,13 @@
 
 		&--full
 			width: 100%
+			padding-top: 120px
+			padding-bottom: 50px
+			background: rgb(248, 248, 248)
 
-		&_style3
-			background: rgb(216, 216, 216)
-
-			h2, h3
-				color: $title
+			+r(576)
+				padding-top: 100px
+				padding-bottom: 25px
 
 		img
 			max-width: 400px
@@ -686,18 +708,6 @@
 			+r(576)
 				max-width: 290px
 
-		&_padding
-			padding-top: 120px
-			padding-bottom: 50px
-			background: rgb(248, 248, 248)
-
-			+r(576)
-				padding-top: 100px
-				padding-bottom: 25px
-
-			h2, h3
-				color: $text
-
 	&__price
 		font-size: 22px
 		opacity: 0
@@ -706,8 +716,8 @@
 		justify-content: flex-end
 		align-items: baseline
 		gap: 10px
-		margin: auto
-		margin-right: 5%
+		margin-left: auto
+		margin-right: 0
 		background: transparent
 		border: none
 
@@ -723,6 +733,18 @@
 
 		svg, path
 			+transition
+
+	form
+		@extend .genio__price
+		position: relative
+		padding-right: 5%
+		flex-wrap: wrap
+
+		button
+			width: 100%
+
+		a
+			display: none
 
 
 .company
@@ -763,111 +785,50 @@
 		gap: 40px
 		flex-wrap: wrap
 
-	&__ite
+	&__item
 		display: flex
 		flex-direction: column
 		justify-content: center
 		align-items: center
 
+		&:hover
+			p
+				color: $accent
+
+			img
+				transform: scale(0.9)
+
+		&:active
+			p
+				color: $accent
+
+			img
+				transform: scale(1.05)
+
 		img
 			width: 70px
 			margin-bottom: 5px
+			+transition
 
 		p
 			font-size: 15px
 			color: #353535
-
-	&__item
+			+transition
+	
+	&__block
+		@extend .genio__item
 		padding: 50px 30px
-		text-align: center
-		margin-bottom: 12px
-
-		+r(992)
-			padding: 25px 0
-
-		&_style3
-			background: rgb(216, 216, 216)
-
-			h2, h3
-				color: #565656
+		width: 70%
+		margin: 0 auto
 
 		img
-			max-width: 400px
+			max-width: 88%
+			width: auto
+			max-height: 400px
+
+		&--full
 			width: 100%
 
-			+r(992)
-				max-width: 350px
-
-			+r(576)
-				max-width: 290px
-
-		&_padding
-			background: rgb(248, 248, 248)
-
-			h2, h3
-				color: #000000
-
-		&_style1
-			background: rgb(0, 0, 0)
-			h2, h3
-				color: #f8f8f8
-			p
-				color: #FFFFFF
-
-		&_style2
-			background: rgb(248, 248, 248)
-			h2, h3
-				color: #000000
-
-	&__hover
-		&:hover button
-			opacity: 1
-			+transition
-
-	&__price
-		font-size: 22px
-		color: #000000
-		opacity: 0
-		cursor: pointer
-		display: flex
-		justify-content: flex-end
-		align-items: baseline
-		gap: 10px
-		margin: auto
-		margin-right: 5%
-		background: transparent
-		border: none
-		+transition
-
-		&:hover
-			color: #e49506 
-			svg
-				fill: #e49506 
-				+transition
-
-		p
-			display: flex
-			align-items: center
-			justify-content: flex-end
-
-		svg
-			width: 23px
-			height: 23px
-			+transition
-
-	&__img
-		max-width: 90% !important
-
-	&__fill
-		color: #fff
-		+transition
-		&:hover
-			color: #e49506 
-			+transition
-
-		svg
-			fill: #FFF
-			+transition
 
 .help
 	padding-top: 90px
@@ -3284,11 +3245,13 @@
 
 		+r(782)
 			top: 46px
+			
+		&__nav
+			top: 112px
 
 #wpadminbar
-		+r(600)
-			position: fixed
-
+	+r(600)
+		position: fixed
 
 .form-group
 	position: relative

@@ -23,36 +23,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 <?php if ( ! WC()->cart->is_empty() ) : ?>
 
-	<div class="header__mincart">
-		<div class="header__mincart_wrap">
-			<div class="header__mincart_product">
-				<a href="#" class="header__mincart_img">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/genio-product-2.png" alt="">
-				</a>
-				<div class="header__text">
-					<h4><a href="#">Genio Laser L800</a></h4>
-					<p>32 590 ₽</p>
-				</div>
-				<button class="header__mincart_close"></button>
-			</div>
-		</div>
-		<div class="header__delivery">
-			<div class="header__row">
-				<p>Доставка</p>
-				<p>Бесплатно!</p>
-			</div>
-			<div class="header__line"></div>
-			<div class="header__row">
-				<p>Итог</p>
-				<h4>32 590 <span>₽</span></h4>
-			</div>
-			<a href="checkout.html" class="header__button">Оформления заказа</a>
-		</div>
-	</div>
-
-
-	<div class="header__mincart <?php echo esc_attr( $args['list_class'] ); ?>">
-	<div class="header__mincart_wrap">
+	<div class="header__mincart_wrap woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
 		<?php
 		do_action( 'woocommerce_before_mini_cart_contents' );
 
@@ -66,39 +37,36 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 				$product_price     = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 				?>
-				<div class="header__mincart_product <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
+				<div class="header__mincart_product woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
 					<?php if ( empty( $product_permalink ) ) : ?>
-						<?php echo $thumbnail . wp_kses_post( $product_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php echo $thumbnail; ?>
 					<?php else : ?>
 						<a href="<?php echo esc_url( $product_permalink ); ?>" class="header__mincart_img">
-							<?php echo $thumbnail . wp_kses_post( $product_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php echo $thumbnail ; ?>
 						</a>
 					<?php endif; ?>
-
-					<?php echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-
+	
 					<div class="header__text">
-						<?php echo apply_filters( 
-							'woocommerce_widget_cart_item_quantity', 
-							'<span class="quantity">' . 
-								sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . 
-							'</span>', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
-						?>
+						<h4><a href="<?php echo esc_url( $product_permalink ); ?>"><?php echo wp_kses_post( $product_name ) ?></a></h4>
+						<p>
+							<?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
+							<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s  %s', $cart_item[''], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
+						</p>
 					</div>
 
 					<?php
-						echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-							'woocommerce_cart_item_remove_link',
-							sprintf(
-								'<button class="header__mincart_close" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"></button>',
-								esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-								esc_attr__( 'Remove this item', 'woocommerce' ),
-								esc_attr( $product_id ),
-								esc_attr( $cart_item_key ),
-								esc_attr( $_product->get_sku() )
-							),
-							$cart_item_key
-						);
+					echo apply_filters(
+						'woocommerce_cart_item_remove_link',
+						sprintf(
+							'<a href="%s" class="header__mincart_close remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"></a>',
+							esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+							esc_attr__( 'Remove this item', 'woocommerce' ),
+							esc_attr( $product_id ),
+							esc_attr( $cart_item_key ),
+							esc_attr( $_product->get_sku() )
+						),
+						$cart_item_key
+					);
 					?>
 				</div>
 				<?php
@@ -107,34 +75,45 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 		do_action( 'woocommerce_mini_cart_contents' );
 		?>
+
+		<div class="header__delivery">
+
+			<div class="header__row">
+					<p>Доставка</p>
+					<p>Бесплатно!</p>
+			</div>
+
+			<div class="header__line"></div>
+
+			<div class="header__row">
+				<?php
+					/**
+					 * Hook: woocommerce_widget_shopping_cart_total.
+					 *
+					 * @hooked woocommerce_widget_shopping_cart_subtotal - 10
+					 */
+					do_action( 'woocommerce_widget_shopping_cart_total' );
+				?>
+			</div>
+
+			<p class="woocommerce-mini-cart__buttons buttons">
+				<?php do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?>
+			</p>
+
+			<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
+		</div>
+
+		
+		<?php do_action( 'woocommerce_widget_shopping_cart_after_buttons' ); ?>
+		</div>
+
 	</div>
-	</div>
-
-	<p class="woocommerce-mini-cart__total total">
-		<?php
-		/**
-		 * Hook: woocommerce_widget_shopping_cart_total.
-		 *
-		 * @hooked woocommerce_widget_shopping_cart_subtotal - 10
-		 */
-		do_action( 'woocommerce_widget_shopping_cart_total' );
-		?>
-	</p>
-
-	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
-
-	<div class="header__delivery">
-		<?php do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?>
-	</div>
-
-	<?php do_action( 'woocommerce_widget_shopping_cart_after_buttons' ); ?>
 
 <?php else : ?>
 
-	<div class="header__mincartempty">
+	<div class="header__mincartempty woocommerce-mini-cart__empty-message">
 		<h2><?php esc_html_e( 'Ваша корзина пуста', 'woocommerce' ); ?></h2>
 	</div>
-
 <?php endif; ?>
 
 <?php do_action( 'woocommerce_after_mini_cart' ); ?>

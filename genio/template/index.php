@@ -36,10 +36,12 @@
 
 					if($width == 100){
 						$width = 'genio__item--full';
+					}else {
+						$width = ' ';
 					}
 			?>
 
-				<div class="genio__item genio__item_padding  <?php echo $width; ?>" style="background: <?php echo $bg; ?>;">
+				<div class="genio__item <?php echo $width; ?>" style="background: <?php echo $bg; ?>;">
 					<a href="<?php echo $url; ?>" class=""><h2 class="genio__title h2" style="color: <?php echo $color; ?>;"><?php echo $title; ?></h2></a>
 					<a href="<?php echo $url; ?>"><p class="genio__subtitle h3" style="color: <?php echo $color; ?>;"><?php echo $desc; ?></p></a>
 					<a href="<?php echo $url; ?>"><img src="<?php echo $img; ?>" alt=""></a>
