@@ -2,12 +2,7 @@
 /* Template name: Аксессуары */
 ?>
 
-<?php get_header();
-
-global $post;
-
-$n = 1;
-?>
+<?php get_header(); ?>
 
 <main>
 	<section class="accessories">
