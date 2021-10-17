@@ -47,7 +47,6 @@
 					<p>Вес</p>
 				</div>
 
-
 				<?php if( have_rows('tovar') ): ?>
 					<?php while( have_rows('tovar') ): the_row(); 
 						$img = get_sub_field('img');
@@ -206,9 +205,9 @@
 
 	<section class="comparison">
 		<div class="comparison__container container">
-			<div class="comparison__grid_more">
+			<div class="comparison__grid_stick">
 
-				<div class="comparison__filter comparison__ttitle_more">
+				<div class="comparison__filter comparison__filter_stick">
 					<h4>Модель</h4>
 					<p>OLED дисплей</p>
 					<p>УФ лампа</p>
@@ -247,7 +246,7 @@
 						$the_weight = get_sub_field('the_weight');
 
 					?>
-						<div class="comparison__item comparison__item_more">
+						<div class="comparison__item comparison__item_stick">
 							<div class="comparison__img">
 								<img src="<?php echo $img; ?>" alt="">
 								<h4><?php echo $name; ?></h4>

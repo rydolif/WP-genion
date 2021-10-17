@@ -1320,14 +1320,13 @@
 		grid-template-columns: repeat(6, minmax(140px, 195px))
 
 		+r(992)
-			grid-template-columns: repeat(4, minmax(140px, 195px))
+			overflow-x: scroll
 
-		+r(576)
-			grid-template-columns: repeat(3, minmax(50px, 195px))
-
-		&_more
+		&_stick
 			display: grid
 			grid-template-columns: repeat(3, minmax(140px, 195px))
+			+r(992)
+				overflow-x: scroll
 
 			+r(576)
 				grid-template-columns: repeat(3, minmax(50px, 195px))
@@ -1363,68 +1362,10 @@
 			+r(480)
 				font-size: 11px
 
-	&__ttitle
-		&_more
+		&_stick
 			grid-template-rows: 195px repeat(14,minmax(80px, 80px)) 
-
 			+r(576)
 				grid-template-rows: 141px repeat(14,minmax(50px, 50px))
-
-		&_mobile
-			display: none
-
-			+r(992)
-				display: grid
-				grid-template-rows: 195px repeat(31,minmax(80px, 80px))
-				box-shadow: -4px 0px 0px -3px #cccccc inset
-				text-align: left
-
-				h4
-					border-bottom: 1px solid #cccccc
-					padding: 80px 0
-					font-size: 22px
-					color: #000
-
-				p
-					border-bottom: 1px solid #cccccc
-					font-size: 16px
-					display: flex
-					align-items: center
-					
-
-			+r(576)
-				display: none
-
-		&_mobiles
-			display: none
-
-			+r(576)
-				display: grid
-				grid-template-rows: 141px repeat(31,minmax(50px, 50px))
-				box-shadow: -4px 0px 0px -3px #cccccc inset
-				text-align: left
-
-				h4
-					border-bottom: 1px solid #cccccc
-					padding: 80px 0
-					font-size: 22px
-					color: #000
-
-					+r(576)
-						padding: 55px 0
-						font-size: 20px
-
-				p
-					border-bottom: 1px solid #cccccc
-					font-size: 16px
-					display: flex
-					align-items: center
-
-					+r(576)
-						font-size: 14px
-			
-					+r(480)
-						font-size: 11px
 
 	&__item
 		display: grid
@@ -1433,12 +1374,12 @@
 		text-align: center
 		+transition
 
-		+r(576)
-			grid-template-rows: 141px repeat(31,minmax(50px, 50px))
-
 		&:hover
 			background-color: #f4f4f4
 			+transition
+
+		+r(576)
+			grid-template-rows: 141px repeat(31,minmax(50px, 50px))
 
 		h4
 			border-bottom: 1px solid #cccccc
@@ -1452,8 +1393,9 @@
 
 		p
 			border-bottom: 1px solid #cccccc
-			padding: 30px 0
+			padding: 30px 10px
 			font-size: 16px
+
 			img
 				width: 20px
 
@@ -1464,7 +1406,7 @@
 			+r(480)
 				font-size: 12px
 
-		&_more
+		&_stick
 			grid-template-rows: 195px repeat(14,minmax(80px, 80px))
 
 			+r(576)
