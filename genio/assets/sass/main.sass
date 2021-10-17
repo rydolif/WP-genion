@@ -1088,11 +1088,10 @@
 			color: #128cdb
 
 .accessories
-	padding: 130px 15px
+	padding: 130px 15px 15px
 
 	+r(992)
 		padding-top: 100px
-		padding-bottom: 25px
 
 	&__container
 		background: #f4f4f4
@@ -1127,6 +1126,8 @@
 		width: 140px
 		height: 140px
 		font-size: 16px
+		+transition
+
 		img
 			width: 100px
 
@@ -1150,11 +1151,11 @@
 			+transition
 
 		&:hover svg
-			fill: #e49506 
+			fill: $accent
 			+transition
 
 		&:hover
-			color: #e49506
+			color: $accent
 
 		p
 			display: flex
@@ -1169,9 +1170,6 @@
 		background: #ffffff
 		border-radius: 10px
 
-	&--activee
-		border-bottom: 1px solid #000
-
 	&__hero
 		display: flex
 		flex-direction: row
@@ -1184,33 +1182,52 @@
 			gap: 50px
 
 	&__img
-		width: 140px
-		height: 200px
+		width: 100%
 		align-items: center
 		display: flex
 		justify-content: center
+
+		img
+			width: 100%
 
 		&_deluxe
 			height: 100% !important
 			width: auto
 
-	&__itemm
+	&__elem
+		display: flex
+		flex-direction: column
+		justify-content: space-between
 		padding: 20px
 		background: #FFF
 		width: 180px
 
-		h4
+		a
+			display: block
 			font-size: 16px
 			font-weight: 400
 			color: #464646
 			text-align: center
-			height: 80px
 			display: flex
 			align-items: center
+
+			&:hover
+				color: $accent
+
+				img
+					transform: scale(0.96)
+
+			&:active
+				img
+					transform: scale(1.05)
+
+		h4
+			padding: 8px 0
 
 		img
 			width: 100%
 			height: auto
+			+transition
 
 	&__buy
 		display: flex
@@ -3288,4 +3305,5 @@
 .cf-color-picker .form-group
 	margin-bottom: 25px !important
 
-
+.added_to_cart
+	display: none !important
