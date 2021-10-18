@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	};
 	headerFixed('.header', '.header--active');
-	// headerFixed('.basket', '.basket--active');
+	headerFixed('.basket', '.basket--active');
 
 //----------------------TABS-JS----------------------
 	const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	};
 	tabs('.tabs', '.tabs__item', '.tabs__wrap', 'tabs--active');
-	tabs('.headerpage__menu', '.headerpage__item', '.headerpage__wrap', 'tabs--activee');
+	tabs('.headerpage__menu', '.headerpage__item', '.headerpage__wrap', 'headerpage__item--active');
 
 //----------------------MODAL-----------------------
 	const modals = (modalSelector) => {

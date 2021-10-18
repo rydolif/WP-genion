@@ -57,7 +57,6 @@
 									$price = $product->get_price_html();
 									$title = $product->get_title();
 									$img = $product->get_image();
-
 								?>
 
 									<div class="tabs__elem">

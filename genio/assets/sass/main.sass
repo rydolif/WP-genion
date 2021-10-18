@@ -644,24 +644,6 @@
 		background: #FFF
 		margin: 10px 0
 
-	&__button, .button
-		display: block !important
-		width: 100% !important
-		font-size: 14px !important
-		color: #FFF !important
-		text-align: center !important
-		border: 1px solid #fff !important
-		border-radius: 50px !important
-		padding: 5px 15px !important
-		background: transparent !important
-		font-weight: 400 !important
-		+transition
-
-		&:hover
-			background: #fff !important
-			color: $text !important
-			+transition
-
 
 .genio
 	a
@@ -1711,7 +1693,6 @@
 	padding: 10px 0
 	border-bottom: 1px solid #c2c2c2
 
-
 	+r(767)
 		top: -35px
 
@@ -1773,6 +1754,10 @@
 
 		+r(767)
 			font-size: 14px
+		
+		&--active
+			&::before
+				transform: scale(1)
 
 	&__buy
 		display: flex
@@ -2064,7 +2049,7 @@
 
 //----content-page----
 .content
-	min-height: 550px
+	+cover
 
 	+r(1200)
 		min-height: auto
@@ -2095,7 +2080,7 @@
 
 			+r(576)
 				font-size: 18px
-				background-color: rgba(0,0,0,0.4)
+				background-color: rgba(0,0,0,0.6)
 				border-radius: 10px
 				text-align: center
 				padding: 5px
@@ -2118,70 +2103,70 @@
 
 			+r(576)
 				line-height: 18px
-				background-color: rgba(0,0,0,0.4)
+				background-color: rgba(0,0,0,0.6)
 				border-radius: 10px
 				text-align: center
 				padding: 5px
 
-.content-right
-	min-height: 550px
-
-	+r(1200)
-		min-height: auto
-
-	&__block
-		padding: 10% 10% 10% 65%
+	&--right
+		+cover
 
 		+r(1200)
-			padding: 8% 0 8% 65%
+			min-height: auto
 
-		+r(992)
-			padding: 6% 0 6% 60%
-
-		+r(576)
-			padding: 5% 0
-
-		h2
-			margin-bottom: 15px
-			font-size: 30px
-			color: #079ad3
+		&__block
+			padding: 10% 10% 10% 65%
 
 			+r(1200)
-				font-size: 22px
+				padding: 8% 0 8% 65%
 
 			+r(992)
-				font-size: 20px
+				padding: 6% 0 6% 60%
+
+			+r(576)
+				padding: 5% 0
+
+			h2
+				margin-bottom: 15px
+				font-size: 30px
+				color: #079ad3
+
+				+r(1200)
+					font-size: 22px
+
+				+r(992)
+					font-size: 20px
+					margin-bottom: 10px
+
+				+r(576)
+					font-size: 18px
+					background-color: rgba(0,0,0,0.6)
+					border-radius: 10px
+					text-align: center
+					padding: 5px
+
+					br
+						display: none
+
+			p
+				line-height: 24px
+				color: #fff
 				margin-bottom: 10px
+				&:last-child
+					margin-bottom: 0
 
-			+r(576)
-				font-size: 18px
-				background-color: rgba(0,0,0,0.4)
-				border-radius: 10px
-				text-align: center
-				padding: 5px
+				+r(1200)
+					line-height: 23px
 
-				br
-					display: none
+				+r(992)
+					line-height: 20px
 
-		p
-			line-height: 24px
-			color: #fff
-			margin-bottom: 10px
-			&:last-child
-				margin-bottom: 0
-
-			+r(1200)
-				line-height: 23px
-
-			+r(992)
-				line-height: 20px
-
-			+r(576)
-				line-height: 18px
-				background-color: rgba(0,0,0,0.4)
-				border-radius: 10px
-				text-align: center
-				padding: 5px
+				+r(576)
+					line-height: 18px
+					background-color: rgba(0,0,0,0.6)
+					border-radius: 10px
+					text-align: center
+					padding: 5px
 
 .text-dark
 	p 
@@ -2196,11 +2181,6 @@
 			background-color: rgba(0, 0, 0, 0.7)
 		p
 			background-color: rgba(0, 0, 0, 0.7)
-
-.bg-cover
-	background-repeat: no-repeat !important
-	background-size: cover !important
-	background-position: center !important
 
 .bg-right
 	background-repeat: no-repeat !important
@@ -3248,3 +3228,189 @@
 
 .added_to_cart
 	display: none !important
+
+.widget_shopping_cart
+	@extend .header__mincart
+
+	.button
+			display: block !important
+			width: 100% !important
+			font-size: 14px !important
+			color: #FFF !important
+			text-align: center !important
+			border: 1px solid #fff !important
+			border-radius: 50px !important
+			padding: 5px 15px !important
+			background: transparent !important
+			font-weight: 400 !important
+			+transition
+
+			&:hover
+				background: #fff !important
+				color: $text !important
+				+transition
+
+
+
+//-------Equipments-----------
+#product_equipments_wrap
+	margin: 50px 0
+	width: 100%
+	min-height: 1150px
+	position: relative
+
+	+r(1200)
+		min-height: fit-content
+
+#product_equipments
+	position: relative
+	margin: 0px auto
+	width: 1200px
+	min-height: 1150px
+
+	+r(1200)
+		width: 100%
+		display: flex
+		justify-content: space-around
+		flex-wrap: wrap
+		min-height: fit-content
+		gap: 15px
+
+.product
+	&_equipment
+		position: absolute
+		width: 250px
+
+		+r(1200)
+			width: calc(24% - 8px)
+			position: relative
+			top: 0 !important
+			left: 0 !important
+			right: 0 !important
+			bottom: 0 !important
+			margin: 0 !important
+		
+		+r(767)
+			width: calc(49% - 8px)
+
+		&_general
+			width: 500px
+			position: absolute
+			margin: 0px 0px 0px -250px
+			left: 50%
+			top: 310px
+
+			+r(1200)
+				display: none
+
+			&_image
+				width: 500px
+				height: 500px
+				border-radius: 50%
+				overflow: hidden
+				cursor: pointer
+
+				&_border
+					box-shadow: 0px 0px 0px 1px #dddddd
+
+				img
+					max-width: 100%
+
+			&_loop
+				width: 1000px
+				position: relative
+
+				img
+					width: 1000px
+					position: relative
+			
+			&_default
+				max-width: 500px
+				max-height: 500px
+
+				+r(1200)
+					max-width: 300px
+					max-height: 300px
+
+		&_1
+			margin: 0px 0px 0px 75px
+			top: 35px
+
+		&_2
+			margin: 0px 0px 0px -125px
+			left: 50%
+
+		&_3
+			margin: 0px 0px 0px 0px
+			right: 75px
+			top: 35px
+
+		&_4
+			margin: 0px 0px 0px 0px
+			top: 450px
+
+		&_5
+			margin: 0px 0px 0px 0px
+			top: 450px
+			right: 0px
+
+		&_6
+			margin: 0px 0px 0px 75px
+			top: 840px
+
+		&_7
+			margin: 0px 0px 0px -125px
+			left: 50%
+			top: 895px
+
+		&_8
+			margin: 0px 0px 0px 0px
+			top: 840px
+			right: 75px
+
+		&_image
+			width: 250px
+			border-radius: 50%
+			cursor: pointer
+			max-width: 250px
+			max-height: 250px
+			text-align: center
+			margin-bottom: 10px
+
+			+r(1200)
+				max-width: 150px
+				max-height: 150px
+				margin: 0 auto
+
+				+r(767)
+					width: 100%
+
+			img
+				max-width: 250px
+				max-height: 250px
+
+				+r(1200)
+					max-width: 150px
+					max-height: 150px
+
+				+r(767)
+					width: 100%
+					// height: auto
+
+		&_block
+			width: 500px
+			height: 500px
+			position: absolute
+			z-index: 1000
+
+			+r(1200)
+				display: none
+
+		&_title
+			text-align: center
+
+		&_general_title
+			margin-top: 10px
+			font-size: 22px
+			text-align: center
+			color: #333
