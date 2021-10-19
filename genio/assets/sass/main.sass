@@ -758,6 +758,7 @@
 			&::last-child
 				margin-bottom: 0
 
+
 .product
 	&__list
 		padding-top: 90px
@@ -1657,6 +1658,7 @@
 			&::after
 				background: #fff !important
 
+
 .empty
 	padding-top: 130px
 	padding-bottom: 30px
@@ -2475,27 +2477,6 @@
 					margin: auto
 
 .complect
-	padding-bottom: 20px
-
-	&__img
-		max-width: 500px
-		margin: auto
-		margin-top: 15px
-		padding-bottom: 20px
-		text-align: center
-		color: $dark
-		font-size: 20px
-
-		+r(1200)
-			max-width: 300px
-
-		+r(767)
-			max-width: 200px
-
-		img
-			width: 100%
-			height: 100%
-
 	&__list
 		display: flex
 		justify-content: center
@@ -2508,6 +2489,7 @@
 			
 			+r(992)
 				gap: 150px
+				margin-bottom: 10px
 
 			+r(767)
 				gap: 100px
@@ -2796,7 +2778,7 @@
 			transform: rotate(90deg)
 
 			span
-				background: $accent
+				background: red
 
 		span
 			display: block
@@ -2862,14 +2844,13 @@
 		p
 			text-align: center
 			font-size: 25px
-			margin: auto
+			margin: 0 auto 15px
 
 			+r(576)
 				font-size: 20px
 
 			span
 				color: #128CDB
-				display: block
 
 .form, .single
 	position: relative
@@ -2928,24 +2909,6 @@
 		+r(576)
 			flex-direction: column
 			gap: 0
-
-	&::after
-		width: 100%
-		height: 100%
-		background-color: rgba(#fff, .7)
-		background-image: url(../img/loading.gif)
-		background-repeat: no-repeat
-		background-position: center
-		background-size: 120px
-		visibility: hidden
-		opacity: 0
-		z-index: 100
-		+transition
-
-	&._sending
-		&::after
-			opacity: 1
-			visibility: visible
 
 	&__item
 		position: relative
@@ -3125,63 +3088,16 @@
 		&_button
 			@extend .btn
 
-	&__error
-		position: absolute
-		bottom: -15px
-		right: 25px
-		left: 25px
-		transition: all .3s
-		animation: error .3s linear 1 forwards
-		color: #fff
-		text-align: center
-		font-weight: 600
-		background-color: red
-		border-radius: 10px
-		z-index: 1
-
-		&::before
-			content: ''
-			position: absolute
-			left: 50%
-			top: -8px
-			margin-left: -2px
-			border-bottom: 4px solid red
-			border-left: 4px solid transparent
-			border-right: 4px solid transparent
-			border-top: 4px solid transparent
-
-	&__nav
-
-		&_wrap
-			display: flex
-			flex-direction: column
-			margin-bottom: 20px
-
-		&_item
-			display: flex
-			margin-bottom: 10px
-
-		&_button
-			display: flex
-			flex-shrink: 0
-
-			a
-				display: flex
-				justify-content: center
-				align-items: center
-				width: 40px
-				height: 40px
-				border-radius: 50%
-				box-shadow: 0 0 5px 0 rgba(#000, .3)
-				padding: 0
-				margin-left: 10px
-
-			img
-				max-width: 50%
-
 	&__modalbuy
 		display: flex
 		justify-content: center
+		margin: 0 !important
+
+		input
+			border-bottom: 1px solid #000 !important
+
+			&:hover, &:focus
+				box-shadow: 0 0 0 0 #000 !important
 
 	&__modal
 		border-bottom: 1px solid #bdbdbd
@@ -3201,7 +3117,7 @@
 		&:focus
 			box-shadow: none
 
-.preloader 
+.preloader
 	position: fixed
 	left: 0
 	top: 0
@@ -3228,15 +3144,16 @@
 			fill: $accent
 
 @keyframes preloader-rotate 
-	100% 
+	100%
 		transform: rotate(360deg)
 
 .loaded_hiding .preloader 
 	transition: 0.3s opacity
 	opacity: 0
 
-.loaded .preloader 
+.loaded .preloader
 	display: none
+
 
 // ----- WP nav -----
 .customize-support
@@ -3257,7 +3174,6 @@
 
 		+r(782)
 			top: 46px
-			
 
 #wpadminbar
 	+r(600)
@@ -3323,7 +3239,6 @@
 				+transition
 
 
-
 //-------Equipments-----------
 #product_equipments_wrap
 	margin: 50px 0
@@ -3347,6 +3262,17 @@
 		flex-wrap: wrap
 		min-height: fit-content
 		gap: 15px
+
+#general_hs
+	width: 500px
+	position: relative
+	margin: auto
+	left: 0
+	top: 0
+
+	+r(1200)
+		display: block
+		max-width: 100%
 
 .product
 	&_equipment
@@ -3382,6 +3308,11 @@
 				overflow: hidden
 				cursor: pointer
 
+				+r(576)
+					width: 290px
+					height: 290px
+					margin: 0 auto
+
 				&_border
 					box-shadow: 0px 0px 0px 1px #dddddd
 
@@ -3400,9 +3331,21 @@
 				max-width: 500px
 				max-height: 500px
 
-				+r(1200)
-					max-width: 300px
-					max-height: 300px
+				+r(576)
+					max-width: 290px
+					max-height: 290px
+
+				img
+					+r(576)
+						max-width: 290px
+						max-height: 290px
+
+
+			&_title
+				margin-bottom: 25px
+
+				+r(992)
+					margin-bottom: 15px
 
 		&_1
 			margin: 0px 0px 0px 75px
@@ -3486,7 +3429,6 @@
 			font-size: 22px
 			text-align: center
 			color: #333
-
 
 .optional
 	display: none

@@ -41,7 +41,7 @@
 						<?php 
 							$product = wc_get_product( $id );
 							$price = $product->get_price_html();
-							echo $price 
+							echo $price
 						?>
 					</h4>
 					<p>
@@ -53,9 +53,29 @@
 						<button class="btn btn--page_buy ajax_add_to_cart add_to_cart_button single_add_to_cart_button" data-product_id="<?php the_ID(); ?>">Купить</button>
 						<a href="#" class="modal__buy">Быстрый заказ</a>
 					</div>
+	
 				</div>
 			</div>
 		</section>
+
+		<div class="modal" id="modal__buy">
+			<div class="modal__form modal__info">
+				<button class="close modal__close" type="button">
+					<span></span>
+					<span></span>
+				</button>
+				<h3>Быстрый заказ</h3>
+				<img src="<?php the_post_thumbnail_url(); ?>" alt="">
+				<p><?php the_field('header_title'); ?> <span><?php echo $price ?></span></p>
+				<div class="form__item form__modalbuy">
+					<label for="phonebuy" class="form__label"></label>
+					<input id="phonebuy" type="tel" name="phone" placeholder="Ваш телефон *" class="form__input _req form__modal">
+				</div>
+				<div class="form__btn">
+					<button type="submit" class="btn btn--modal" name="submit">Оформить заказ</button>
+				</div>
+			</div>
+		</div>
 
 		<?php 
 			$info_block = get_field('info_block');
@@ -142,6 +162,28 @@
 			<?php endwhile; ?>
 		<?php endif; ?>
 
+		<?php if( have_rows('perference') ): ?>
+			<section class="perference">
+				<div class="perference__container container">
+				<?php while( have_rows('perference') ): the_row();
+					$title = get_sub_field('title');
+					$text = get_sub_field('text');
+					$img = get_sub_field('img');
+				?>
+					<div class="perference__block">
+						<div class="perference__text">
+							<h2><?php echo $title; ?></h2>
+							<?php echo $text; ?>
+						</div>
+						<div class="perference__img">
+							<img src="<?php echo $img; ?>" alt="">
+						</div>
+					</div>
+					<?php endwhile; ?>
+				</div>
+			</section>
+		<?php endif; ?>
+
 		<?php if( get_field('allrobot') ): ?>
 			<section class="allrobot">
 				<div class="allrobot__container container">
@@ -225,45 +267,7 @@
 		</section>
 	</div>
 
-	<!--<div class="headerpage__wrap">
-		 <section class="complect">
-			<div class="complect__container container">
-				<div class="complect__img">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/genio-product-2.png" alt="">
-					<p>Genio Laser L800</p>
-				</div>
-				<div class="complect__list">
-					<div class="complect__list_title">
-						<div class="complect__list_content"><h4>Зарядная база</h4><p>1 шт.</p></div>
-						<div class="complect__list_content"><h4>Контейнер для воды</h4><p>1 шт.</p></div>
-						<div class="complect__list_content"><h4>НЕРА-фильтр</h4><p>1 шт.</p></div>
-						<div class="complect__list_content"><h4>Боковые щетки</h4><p>2 шт.</p></div>
-						<div class="complect__list_content"><h4>Запасная салфетка</h4><p>1 шт.</p></div>
-						<div class="complect__list_content"><h4>Пульт ДУ</h4><p>1 шт.</p></div>
-						<div class="complect__list_content"><h4>Адаптер питания</h4><p>1 шт.</p></div>
-						<div class="complect__list_content"><h4>Щеточка для очистки</h4><p>1 шт.</p></div>
-						<div class="complect__list_content"><h4>Инструкция</h4><p>1 шт.</p></div>
-						<div class="complect__list_content"><h4>Гарантийный талон</h4><p>1 шт.</p></div>
-					</div>
-				</div>
-
-			</div>
-		</section>
-		<div class="product_equipment_general" data-img="<?php the_post_thumbnail_url(); ?>">
-			<div class="product_equipment_general_image">
-				<div style="width:500px;height:500px;position:absolute;z-index:1000;"></div>
-				<div class="product_equipment_general_loop"></div>
-				<div class="product_equipment_general_default">
-					<img  src="<?php the_post_thumbnail_url(); ?>" alt="" style="width:100%; position: absolute; top: 0px;">
-				</div>
-				</div>
-				<div class="product_equipment_general_title"><?php the_title(); ?></div>
-			</div>
-		</div> 
-	</div> -->
-
 	<div class="container headerpage__wrap">
-
 		<div id="product_equipments_wrap">
 			<?php
 				$n = 1;
@@ -286,23 +290,23 @@
 					endwhile;
 				}
 					if ($image == 0 && $check == 0){
-							if ( has_post_thumbnail()) {
-							$image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full'); 
-							?>
-							<div id="general_hs" class="product_equipment_general" data-img="<?php echo $image_url[0]; ?>">
+						if ( has_post_thumbnail()) {
+						$image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full'); 
+					?>
+						<div id="general_hs" class="product_equipment_general" data-img="<?php echo $image_url[0]; ?>">
 							<div class="product_equipment_general_image">
-							<div style="width:500px;height:500px;position:absolute;z-index:1000;"></div>
-							<div class="product_equipment_general_loop"></div>
-							<div class="product_equipment_general_default">
-								<img  src="<?php echo $image_url[0]; ?>" alt="" style="position:absolute; top:0px; width:100%;">
+								<div class="product_equipment_block" style="width:500px;height:500px;position:absolute;z-index:1000;"></div>
+								<div class="product_equipment_general_loop"></div>
+								<div class="product_equipment_general_default">
+									<img  src="<?php echo $image_url[0]; ?>" alt="" style="position:absolute; top:0px; width:100%;">
+								</div>
 							</div>
-						</div>
-						<div class="product_equipment_general_title"><?php the_title(); ?></div>
-					</div>
-			<?php 
-					}
-				}
-			?>
+							<div class="product_equipment_general_title"><?php the_title(); ?></div>
+							</div>
+					<?php 
+							}
+						}
+					?>
 
 			<div id="product_equipments">
 				<?php
@@ -310,66 +314,57 @@
 					$once = 0;
 					if(have_rows('equipment')){
 						while ( have_rows('equipment') ) : the_row();
-							if($n<9){
 
+							if($n<9){
 								$title = get_sub_field('title');
 								$value = get_sub_field('value');
 								$image = get_sub_field('image');
-								
 								if ($image) {
 									$check = 1; 
 								}
 								else {
 									$check = 0;
 								}
-								?>
+							?>
 
 						<?php
 							if(!empty($image['url'])){
 								$image = $image['url'];
 							?>
-							<div class="product_equipment product_equipment_<?php echo $n; ?>" data-id="<?php echo $n; ?>" data-img="<?php echo $image; ?>">
-								<div class="product_equipment_image"><img src="<?php echo $image; ?>" alt=""></div>
-								<div class="product_equipment_title"><?php echo $title; ?></div>
-							</div>
-							<?php
-							
-							$n++;
-							
-							}
-								
-							if($check == 0){
-								
-							if($once == 0) {
-								
-							?> <div style="margin: 25px 0; display: block; width: 100%;"> <?php
-								
-							if(have_rows('equipment')){
-							
-							while ( have_rows('equipment') ) : the_row();
-							
-								$title = get_sub_field('title');
-								$value = get_sub_field('value');
-							?>
-
-								<div class="row product-single-charact-item">
-									<div class="col-md-9 col-xs-6 product-single-charact-item-title"><?php echo $title; ?></div>
-									<div class="col-md-3 col-xs-6 product-single-charact-item-value"><?php echo $value; ?></div>
+								<div class="product_equipment product_equipment_<?php echo $n; ?>" data-id="<?php echo $n; ?>" data-img="<?php echo $image; ?>">
+									<div class="product_equipment_image"><img src="<?php echo $image; ?>" alt=""></div>
+									<div class="product_equipment_title"><?php echo $title; ?></div>
 								</div>
-							<?php
-							
-							endwhile;
-							
-							$once = 1;
-							
-							?> </div> <?php
-							
+								<?php
+								$n++;
 							}
-							
+							if($check == 0){
+							if($once == 0) {
+						?>
+
+						<div class="complect__list">
+							<div class="complect__list_title">
+								<?php
+									if(have_rows('equipment')){
+										while ( have_rows('equipment') ) : the_row();
+											$title = get_sub_field('title');
+											$value = get_sub_field('value');
+										?>
+											<div class="complect__list_content">
+												<h4><?php echo $title; ?></h4>
+												<p><?php echo $value; ?></p>
+											</div>
+										<?php
+										endwhile;
+										$once = 1;
+									}
+								?> 
+							</div>
+						</div>
+
+						<?php
 							}
-							
 							}
-								
 							}
 						endwhile;
 					}
@@ -396,19 +391,14 @@
 					<div class="product_equipment_general_title"><?php the_title(); ?></div>
 				</div>
 				<?php 
-				
-				}
-				
-				}
-				
+					}
+					}
 				?>
-
-
 
 			</div>
 		</div>
-
 	</div>
+
 </main>
 
 <?php endwhile; ?>
@@ -479,7 +469,5 @@
 
 	});
 </script>
-
-<?php get_template_part( 'parts/modal' ); ?>
 
 <?php get_footer(); ?>
