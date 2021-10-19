@@ -28,3 +28,38 @@ add_action( 'admin_menu', 'remove_menus' );
 register_nav_menus(array(
 	'menu' => 'Навигация по сайту'
 ));
+
+
+// Все $fields в этой функции будут пропущены через фильтр
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+function custom_override_checkout_fields( $fields ) {
+	unset($fields['billing']['billing_company']);
+	unset($fields['billing']['billing_last_name']);
+	unset($fields['billing']['billing_address_2']);
+	unset($fields['billing']['billing_country']);
+	unset($fields['billing']['billing_state']);
+	unset($fields['billing']['billing_postcode']);
+
+	$fields['billing']['billing_city']['required'] = false;
+	$fields['billing']['billing_address_1']['required'] = false;
+	$fields['billing']['billing_email']['required'] = false;
+
+	$fields['order']['order_comments']['label'] = 'Примечание к заказу';
+	$fields['order']['order_comments']['placeholder'] = '';
+
+	$fields['billing']['billing_first_name']['label'] = 'ФИО';
+	$fields['billing']['billing_city']['label'] = 'Город';
+
+	return $fields;
+}
+
+add_filter( 'woocommerce_billing_fields', 'estore_woocommerce_custom_checkout_billing_fields', 10, 2 );
+function estore_woocommerce_custom_checkout_billing_fields( $address_fields, $country ) {
+	$address_fields['billing_first_name']['class'] = array( 'form__item' );
+	$address_fields['billing_last_name']['class'] = array( 'form__item' );
+	$address_fields['billing_city']['class'] = array( 'form__item form__place' );
+	$address_fields['billing_address_1']['class'] = array( 'form__item' );
+	$address_fields['billing_phone']['class'] = array( 'form__item_row' );
+	$address_fields['billing_email']['class'] = array( 'form__item_row' );
+	return $address_fields;
+}

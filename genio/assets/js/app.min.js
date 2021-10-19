@@ -29,16 +29,20 @@ document.addEventListener("DOMContentLoaded", function() {
 		const header =  document.querySelector(headerFixed),
 					active = headerActive.replace(/\./, '');
 
-		window.addEventListener('scroll', function() {
-			const top = pageYOffset;
-			
-			if (top >= 90) {
-				header.classList.add(active);
-			} else {
-				header.classList.remove(active);
-			}
+		if (header) {
+			if (active) {
+				window.addEventListener('scroll', function() {
+					const top = pageYOffset;
+					
+					if (top >= 90) {
+						header.classList.add(active);
+					} else {
+						header.classList.remove(active);
+					}
 
-		});
+				});
+			}
+		}
 
 	};
 	headerFixed('.header', '.header--active');
