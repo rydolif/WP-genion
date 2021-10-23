@@ -461,9 +461,6 @@
 		visibility: hidden
 		+transition
 
-		+r(576)
-			right: -55px
-
 		&_wrap
 			overflow: auto
 			padding-top: 15px !important
@@ -1758,6 +1755,7 @@
 		display: flex
 		justify-content: space-between
 		align-items: center
+		gap: 10px
 
 		+r(767)
 			flex-direction: column
@@ -1766,14 +1764,12 @@
 			font-family: $f_title
 			font-size: 30px
 			color: $title
-			text-align: center
 
 			+r(992)
 				font-size: 25px
 
 			+r(767)
 				font-size: 20px
-				margin-bottom: 5px
 
 	&__menu
 		display: flex
@@ -2107,10 +2103,28 @@
 
 //----content-page----
 .content
+	position: relative
+	z-index: 1
 	+cover
 
 	+r(1200)
 		min-height: auto
+
+	&::before
+		content: ''
+		display: none
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-color: rgba(0,0,0,0.6)
+		z-index: -1
+
+		+r(576)
+			display: block
 
 	&__block
 		padding: 10% 65% 10% 10%
@@ -2138,8 +2152,6 @@
 
 			+r(576)
 				font-size: 18px
-				background-color: rgba(0,0,0,0.6)
-				border-radius: 10px
 				text-align: center
 				padding: 5px
 
@@ -2150,27 +2162,38 @@
 			color: #fff
 			line-height: 24px
 			margin-bottom: 10px
-			&:last-child
-				margin-bottom: 0
-
-			+r(1200)
-				line-height: 23px
 
 			+r(992)
 				line-height: 20px
 
 			+r(576)
 				line-height: 18px
-				background-color: rgba(0,0,0,0.6)
-				border-radius: 10px
 				text-align: center
 				padding: 5px
 
 	&--right
+		position: relative
+		z-index: 1
 		+cover
 
 		+r(1200)
 			min-height: auto
+
+		&::before
+			content: ''
+			display: none
+			width: 100%
+			height: 100%
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background-color: rgba(0,0,0,0.6)
+			z-index: -1
+
+			+r(576)
+				display: block
 
 		&__block
 			padding: 10% 10% 10% 65%
@@ -2198,8 +2221,6 @@
 
 				+r(576)
 					font-size: 18px
-					background-color: rgba(0,0,0,0.6)
-					border-radius: 10px
 					text-align: center
 					padding: 5px
 
@@ -2213,16 +2234,11 @@
 				&:last-child
 					margin-bottom: 0
 
-				+r(1200)
-					line-height: 23px
-
 				+r(992)
 					line-height: 20px
 
 				+r(576)
 					line-height: 18px
-					background-color: rgba(0,0,0,0.6)
-					border-radius: 10px
 					text-align: center
 					padding: 5px
 
@@ -2521,9 +2537,28 @@
 //----another-block----
 .aboutm
 	background: #f3f3f3
+	position: relative
+	z-index: 1
+
+	&::before
+		content: ''
+		display: none
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-color: rgba(0,0,0,0.6)
+		z-index: -1
+
+		+r(992)
+			display: block
 
 	&__container
 		padding: 10% 15px
+		z-index: 1
 
 		+r(992)
 			padding: 5% 15px
@@ -2541,16 +2576,12 @@
 			+r(992)
 				font-size: 20px
 				margin-bottom: 10px
-				background-color: rgba(0,0,0,0.5)
-				border-radius: 10px
 				text-align: center
 				margin-left: 0
 
 			+r(576)
 				font-size: 18px
-				border-radius: 10px
 				text-align: center
-				padding: 5px
 
 	&__item
 		display: flex
@@ -2561,8 +2592,13 @@
 			margin-left: 10%
 
 		+r(576)
-			gap: 2px
+			gap: 10px
 			margin-left: 0%
+
+		+r(480)
+			gap: 5px
+			flex-wrap: wrap
+			text-align: center
 
 	&__list
 		display: grid
@@ -2574,20 +2610,22 @@
 			margin-left: 5%
 
 		+r(992)
-			background-color: rgba(0,0,0,0.5)
-			border-radius: 10px
 			margin-left: 0
 			grid-template-columns: 1fr 1fr
-			padding: 20px
 
 		+r(767)
 			gap: 30px
 
 		+r(576)
-			padding: 10px
 			gap: 10px
 
+		+r(480)
+			grid-template-columns: 1fr
+
 	&__text
+		+r(480)
+			width: 100%
+
 		h4
 			font-size: 20px
 			margin-bottom: 5px
@@ -2606,50 +2644,22 @@
 			+r(576)
 				font-size: 14px
 
+	&__img
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 40px
+		height: 40px
+		flex-shrink: 0
+
+		+r(480)
+			margin: 0 auto
+
+		img
+			max-width: 100%
+			max-height: 100%
+
 .noise
-	&__container
-		h2
-			margin-bottom: 15px
-			font-size: 30px
-			color: #079ad3
-
-			+r(1200)
-				font-size: 22px
-
-			+r(992)
-				font-size: 20px
-				margin-bottom: 10px
-
-			+r(576)
-				font-size: 18px
-				background-color: rgba(0,0,0,0.4)
-				border-radius: 10px
-				text-align: center
-				padding: 5px
-
-		p
-			color: #fff
-			line-height: 24px
-			margin-bottom: 20px
-
-			+r(1200)
-				line-height: 23px
-
-			+r(992)
-				line-height: 20px
-
-			+r(576)
-				line-height: 18px
-				background-color: rgba(0,0,0,0.4)
-				border-radius: 10px
-				text-align: center
-				padding: 5px
-
-		h4
-			color: #fff
-			font-size: 16px
-			font-weight: 400
-
 	&__block
 		padding: 10% 60% 10% 10%
 
@@ -2683,6 +2693,11 @@
 			span
 					font-weight: 700
 
+		h4
+			color: #fff
+			font-size: 16px
+			font-weight: 400
+
 	&__bglightblue
 		display: flex
 		align-items: center
@@ -2714,7 +2729,7 @@
 
 	&__bgblue
 		p
-			width: 340px;
+			width: 340px
 			background-color: #2aacff
 			box-shadow: 5px 5px 0 #1276b6
 			display: block
@@ -2728,6 +2743,17 @@
 
 			span
 					font-weight: 700
+		h4
+			color: #fff
+			font-size: 16px
+			font-weight: 400
+
+	&__list_b
+		h4
+			color: #fff
+			font-size: 14px
+			font-weight: 400
+
 
 // ----- MODAL -----
 .modal
@@ -3168,6 +3194,11 @@
 
 			+r(782)
 				top: 126px
+
+		&--active
+			.header__nav--active
+				+r(782)
+					top: 160px
 
 	.headerpage
 		top: 32px

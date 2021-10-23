@@ -77,6 +77,32 @@
 			</div>
 		</div>
 
+		<?php if( have_rows('characteristics_stick') ): ?>
+			<section class="aboutm bg-right" style="background-image: url(<?php the_field('bg_stick'); ?>);">
+				<div class="aboutm__container container">
+					<h2>ОСНОВНЫЕ <br>ХАРАКТЕРИСТИКИ</h2>
+
+					<div class="aboutm__list">
+					<?php while( have_rows('characteristics_stick') ): the_row();
+						$img = get_sub_field('img');
+						$title = get_sub_field('title');
+						$text = get_sub_field('text');
+					?>
+						<div class="aboutm__item">
+							<div class="aboutm__img">
+								<img src="<?php echo $img; ?>" alt="">
+							</div>
+							<div class="aboutm__text">
+								<h4><?php echo $title; ?></h4>
+								<p><?php echo $text; ?></p>
+							</div>
+						</div>
+						<?php endwhile; ?>
+					</div>
+				</div>
+			</section>
+		<?php endif; ?>
+
 		<?php 
 			$info_block = get_field('info_block');
 			if ($info_block) { 
@@ -106,26 +132,30 @@
 				$title = get_sub_field('title');
 				$text = get_sub_field('text');
 			?>
-			<section class="workpage">
-				<div class="workpage__container container">
-					<h2 class="workpage__title"><?php echo $title ?></h2>
-					<?php echo $text; ?>
-					<?php if( have_rows('list') ): ?>
-						<div class="workpage__list">
-							<?php while( have_rows('list') ): the_row(); 
-								$img = get_sub_field('img');
-								$text = get_sub_field('text');
-							?>
-								<div class="workpage__item">
-									<img src="<?php echo $img; ?>" alt="">
-									<p><?php echo $text; ?></p>
-									<b></b>
+			<?php if($title) { ?>
+				<?php if($text) { ?>
+					<section class="workpage">
+						<div class="workpage__container container">
+							<h2 class="workpage__title"><?php echo $title ?></h2>
+							<?php echo $text; ?>
+							<?php if( have_rows('list') ): ?>
+								<div class="workpage__list">
+									<?php while( have_rows('list') ): the_row(); 
+										$img = get_sub_field('img');
+										$text = get_sub_field('text');
+									?>
+										<div class="workpage__item">
+											<img src="<?php echo $img; ?>" alt="">
+											<p><?php echo $text; ?></p>
+											<b></b>
+										</div>
+									<?php endwhile; ?>
 								</div>
-							<?php endwhile; ?>
+							<?php endif; ?>
 						</div>
-					<?php endif; ?>
-				</div>
-			</section>
+					</section>
+				<?php } ?>
+			<?php } ?>
 			<?php endwhile; ?>
 		<?php endif; ?>
 
