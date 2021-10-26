@@ -52,30 +52,12 @@
 					<div class="bannerpage__buy">
 						<button class="btn btn--page_buy ajax_add_to_cart add_to_cart_button single_add_to_cart_button" data-product_id="<?php the_ID(); ?>">Купить</button>
 						<a href="#" class="modal__buy">Быстрый заказ</a>
+						<?php echo do_shortcode( "[viewBuyButton id='$id']" ); ?>
 					</div>
 	
 				</div>
 			</div>
 		</section>
-
-		<div class="modal" id="modal__buy">
-			<div class="modal__form modal__info">
-				<button class="close modal__close" type="button">
-					<span></span>
-					<span></span>
-				</button>
-				<h3>Быстрый заказ</h3>
-				<img src="<?php the_post_thumbnail_url(); ?>" alt="">
-				<p><?php the_field('header_title'); ?> <span><?php echo $price ?></span></p>
-				<div class="form__item form__modalbuy">
-					<label for="phonebuy" class="form__label"></label>
-					<input id="phonebuy" type="tel" name="phone" placeholder="Ваш телефон *" class="form__input _req form__modal">
-				</div>
-				<div class="form__btn">
-					<button type="submit" class="btn btn--modal" name="submit">Оформить заказ</button>
-				</div>
-			</div>
-		</div>
 
 		<?php if( have_rows('characteristics_stick') ): ?>
 			<section class="aboutm bg-right" style="background-image: url(<?php the_field('bg_stick'); ?>);">
