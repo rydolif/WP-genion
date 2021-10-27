@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="checkout__row_form">
 		<div class="checkout__number">
-			<p>3</p>
+			<p>4</p>
 			<h2 class="checkout__title h2">Платежные данные</h2>
 		</div>
 		<?php

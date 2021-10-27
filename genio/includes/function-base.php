@@ -50,6 +50,8 @@ function custom_override_checkout_fields( $fields ) {
 	$fields['billing']['billing_first_name']['label'] = 'ФИО';
 	$fields['billing']['billing_city']['label'] = 'Город';
 
+	$fields['billing']['billing_address_1']['placeholder'] = '';
+
 	return $fields;
 }
 

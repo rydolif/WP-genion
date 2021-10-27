@@ -23,8 +23,15 @@ if ( ! is_ajax() ) {
 ?>
 	<?php if ( WC()->cart->needs_payment() ) : ?>
 		<div class="checkout__order wc_payment_methods payment_methods methods">
+		<div class="checkout__order">
+				<div class="checkout__number">
+					<p>2</p>
+					<h2 class="checkout__title h2">Способ доставки</h2>
+				</div>
+				<p class="checkout__deliver">Доставка</p>
+			</div>
 			<div class="checkout__number">
-				<p>2</p>
+				<p>3</p>
 				<h2 class="checkout__title h2">Способ оплаты</h2>
 			</div>
 			<div class="checkout__listPay">

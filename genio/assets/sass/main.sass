@@ -209,7 +209,7 @@
 	color: $dark
 	font-family: $f_title
 
-.h2, h2
+.h2
 	font-size: 50px
 	margin-bottom: 15px
 	font-family: $f_title
@@ -224,7 +224,7 @@
 	+r(576)
 		font-size: 25px
 
-.h3, h3
+.h3
 	font-size: 26px
 	font-weight: 400
 	margin-bottom: 18px
@@ -296,6 +296,18 @@
 	+r(992)
 		margin-bottom: 20px
 
+.active_menu
+	color: #999 !important
+
+.header__cart_quantity--active
+	animation: 2s linear running header__cart_quantity--active
+
+@keyframes header__cart_quantity--active
+	0%
+		background-color: $accent
+	100%
+		background-color: #fff
+
 //----index-page----
 .header
 	position: fixed
@@ -304,7 +316,7 @@
 	left: 0
 	padding: 10px 0
 	background: rgba(255, 255, 255, .95)
-	z-index: 100
+	z-index: 1000
 
 	&--page
 		position: static
@@ -665,7 +677,6 @@
 		&:hover
 			.genio__price
 				opacity: 1
-				+transition
 
 		&--full
 			width: 100%
@@ -699,6 +710,10 @@
 		margin-right: 0
 		background: transparent
 		border: none
+		+transition
+
+		+r(767)
+			opacity: 1
 
 		&:hover
 			color: $accent !important
@@ -710,7 +725,7 @@
 			width: 23px
 			height: 23px
 
-		svg, path
+		path
 			+transition
 
 	form
@@ -872,54 +887,53 @@
 	+r(992)
 		padding-bottom: 15px
 
-	&__container
+	img
+		width: 100%
+		height: auto
+		margin-bottom: 24px
 
-		img
-			width: 100%
-			height: auto
-			margin-bottom: 24px
+		+r(767)
+			margin-bottom: 15px
 
-			+r(767)
-				margin-bottom: 15px
+	ul
+		list-style: disc
+		margin-left: 20px
+		margin-bottom: 24px
 
-		ul
-			list-style: disc
-			margin-left: 20px
-			margin-bottom: 24px
-
-			+r(767)
-				margin-bottom: 15px
-
-			li
-				font-size: 16px
-				margin-bottom: 15px
+		+r(767)
+			margin-bottom: 15px
 
 		li
 			font-size: 16px
-			margin-bottom: 24px
-			font-weight: 700
+			margin-bottom: 15px
 
-			+r(767)
-				margin-bottom: 15px
+	li
+		font-size: 16px
+		margin-bottom: 24px
+		font-weight: 700
 
+		+r(767)
+			margin-bottom: 15px
 
-		h2
-			font-size: 22px
-			margin-bottom: 24px
+	h2
+		font-size: 22px
+		margin-bottom: 24px
 
-			+r(767)
-				margin-bottom: 15px
+		+r(767)
+			margin-bottom: 15px
 
-		p
-			font-size: 16px
-			margin-bottom: 24px
-			text-align: justify
-			line-height: 30px
+	p
+		font-size: 16px
+		margin-bottom: 24px
+		text-align: justify
+		line-height: 30px
 
-			+r(767)
-				margin-bottom: 15px
-				line-height: 25px
+		+r(767)
+			margin-bottom: 15px
+			line-height: 25px
 
+	a
+		color: #128cdb
 
 .contacts
 	padding-top: 90px
@@ -928,6 +942,8 @@
 	+r(992)
 		padding-bottom: 15px
 
+	h3
+		font-family: $f_title
 	&__banner
 			width: 100%
 			height: auto
@@ -994,8 +1010,8 @@
 		border-radius: 100px
 
 		img
-			width: 32px
-			height: 32px
+			max-width: 28px
+			max-height: 28px
 
 	&__text
 		display: flex
@@ -1113,12 +1129,12 @@
 		font-size: 16px
 		+transition
 
-		img
-			width: 100px
-
 		&:hover
 			box-shadow: 0px 0px 0px 1px #cccccc
 			border-radius: 10px
+
+		img
+			width: 100px
 
 	&__price
 		font-size: 20px
@@ -1131,13 +1147,8 @@
 		background: transparent
 		border: none
 
-		svg
-			fill: #000
-			+transition
-
 		&:hover svg
 			fill: $accent
-			+transition
 
 		&:hover
 			color: $accent
@@ -1149,6 +1160,7 @@
 		svg
 			width: 20px
 			height: 23px
+			fill: #000
 
 	&--active
 		box-shadow: 0px 0px 0px 2px #128cdb !important
@@ -1183,9 +1195,18 @@
 		display: flex
 		flex-direction: column
 		justify-content: space-between
-		padding: 20px
 		background: #FFF
 		width: 180px
+
+		&:hover
+			.tabs__price
+				color: $accent
+
+				svg, path
+					fill: $accent
+
+		&_desc
+			padding: 20px
 
 		a
 			display: block
@@ -1199,15 +1220,9 @@
 			&:hover
 				color: $accent
 
-				img
-					transform: scale(0.96)
-
-			&:active
-				img
-					transform: scale(1.05)
-
 		h4
-			padding: 8px 0
+			margin-bottom: 8px
+			text-align: center
 
 		img
 			width: 100%
@@ -1644,13 +1659,14 @@
 		position: absolute
 		right: 0
 		top: 0
-		border: 1px solid red !important
+		border: 1px solid #626262 !important
 
 		&::before,
 		&::after
-			background: red !important
+			background: #626262 !important
 
 		&:hover
+			border: 1px solid red !important
 			&::before,
 			&::after
 				background: #fff !important
@@ -1669,11 +1685,11 @@
 
 
 .footer
-	padding: 50px 0
+	padding: 50px 0 70px
 	background: #f8f8f8
 
 	+r(992)
-		padding: 25px 0
+		padding: 25px 0 40px
 
 	&__container
 		+around
@@ -1729,6 +1745,15 @@
 		img
 			width: 50px
 
+	&__copy
+		text-align: center
+		padding: 10px 0
+		font-size: 12px
+		color: #333
+
+		a
+			color: #333
+
 //----main-page----
 .basket
 	&--active
@@ -1742,7 +1767,7 @@
 
 .headerpage
 	position: sticky
-	z-index: 1
+	z-index: 100
 	top: 0
 	background: rgba(255,255,255,.95)
 	padding: 10px 0
@@ -1750,6 +1775,9 @@
 
 	+r(767)
 		top: -35px
+
+	.header__basket:hover .widget_shopping_cart
+		margin-top: 17px
 
 	&__container
 		display: flex

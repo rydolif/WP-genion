@@ -97,5 +97,19 @@ document.addEventListener("DOMContentLoaded", function() {
 	tabs('.headerpage__menu', '.headerpage__item', '.headerpage__wrap', 'headerpage__item--active');
 
 
+//----------------------MENU_ACTIVE_LINK_JS----------------------
+	function shineLinks(id){
+		try{
+			let el = document.getElementById(id).getElementsByTagName('a');
+			let url = document.location.href;//палим текущий урл
+			for(let i=0;i<el.length; i++){
+				if (url==el[i].href){
+					el[i].className = 'active_menu';//если урл==текущий, добавляем класс
+				};
+			};
+		}catch(e){}
+	};
+	shineLinks('menu-header_menu');
+
 });
 	

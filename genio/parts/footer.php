@@ -44,5 +44,9 @@
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer__logo1.png" alt="">
 			</div>
 		</div>
+
+	</div>
+	<div class="footer__copy container">
+		<p>© 2021 <a href="<?php echo get_home_url(); ?>">Genio</a>. Все права защищены</p>
 	</div>
 </footer>

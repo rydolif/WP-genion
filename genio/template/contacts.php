@@ -25,7 +25,7 @@
 				<div class="contacts__info">
 					<div class="contacts__item">
 						<div class="contacts__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/contact-clock.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/free-icon-time-25692.png" alt="">
 						</div>
 						<div class="contacts__text">
 							<h3>Время работы:</h3>
@@ -34,7 +34,7 @@
 					</div>
 					<div class="contacts__item">
 						<div class="contacts__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/contact-home.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/free-icon-home-25694.png" alt="">
 						</div>
 						<div class="contacts__text">
 							<h3>Адрес:</h3>
@@ -52,11 +52,11 @@
 					</div>
 					<div class="contacts__item">
 						<div class="contacts__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/contact-clock.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/free-icon-mail.png" alt="">
 						</div>
 						<div class="contacts__text">
-							<h3>Время работы:</h3>
-							<a href="mailto:<?php the_field('email'); ?>"><?php the_field('tel'); ?></a>
+							<h3>Email:</h3>
+							<a href="mailto:<?php the_field('email'); ?>"><?php the_field('email'); ?></a>
 						</div>
 					</div>
 				</div>
