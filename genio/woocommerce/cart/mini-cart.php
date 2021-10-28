@@ -86,14 +86,8 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 			<div class="header__line"></div>
 
 			<div class="header__row">
-				<?php
-					/**
-					 * Hook: woocommerce_widget_shopping_cart_total.
-					 *
-					 * @hooked woocommerce_widget_shopping_cart_subtotal - 10
-					 */
-					do_action( 'woocommerce_widget_shopping_cart_total' );
-				?>
+				<strong> Итог </strong>
+				<?php wc_cart_totals_subtotal_html(); ?>
 			</div>
 
 			<p class="woocommerce-mini-cart__buttons buttons">

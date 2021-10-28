@@ -9,7 +9,10 @@
 <main>
 	<section class="contacts">
 
-		<?php get_template_part( 'parts/page-title' ); ?>
+		<div class="title container">
+			<h1 class="h1"><?php the_title(); ?></h1>
+			<a href="<?php echo get_home_url(); ?>/nashi-dilery">Наши дилеры</a>
+		</div>
 
 		<div class="container">
 

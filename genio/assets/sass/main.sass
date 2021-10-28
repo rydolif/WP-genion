@@ -645,7 +645,6 @@
 		strong
 			color: #fff
 			font-size: 15px
-			font-weight: 400
 
 	&__line
 		height: 1px
@@ -934,6 +933,7 @@
 
 	a
 		color: #128cdb
+
 
 .contacts
 	padding-top: 90px
@@ -1289,82 +1289,49 @@
 	+r(992)
 		padding-bottom: 10px
 
-	&__img
-		img
-			width: 100px
-			height: 100px
-			margin-bottom: 20px
-			margin-top: 25px
-
-			+r(767)
-				height: 99px
-
-			+r(576)
-				width: 80px
-				height: 80px
-				margin-bottom: 10px
-				margin-top: 10px
-
 	&__container
 		display: flex
-		justify-content: center
 		align-items: center
+		max-width: 1200px
 
 	&__grid
 		display: grid
-		grid-template-columns: repeat(6, minmax(140px, 195px))
+		width: 100%
+		grid-template-columns: repeat(6, 1fr)
 
 		+r(992)
 			overflow-x: scroll
 
-		&_stick
-			display: grid
-			grid-template-columns: repeat(3, minmax(140px, 195px))
-			+r(992)
-				overflow-x: scroll
-
-			+r(576)
-				grid-template-columns: repeat(3, minmax(50px, 195px))
-
 	&__filter
 		display: grid
-		grid-template-rows: 195px repeat(31,minmax(80px, 80px))
 		box-shadow: -4px 0px 0px -3px #cccccc inset
 		text-align: left
 
-		+r(576)
-			grid-template-rows: 141px repeat(31,minmax(50px, 50px))
-
 		h4
+			display: flex
+			align-items: center
+			height: 195px
 			border-bottom: 1px solid #cccccc
-			padding: 80px 0
 			font-size: 22px
 			color: #000
 
-			+r(576)
+			+r(992)
 				padding: 55px 0
 				font-size: 20px
+				height: 180px
 
 		p
 			border-bottom: 1px solid #cccccc
 			font-size: 16px
 			display: flex
 			align-items: center
+			min-height: 80px
 
-			+r(576)
-				font-size: 13px
-
-			+r(480)
-				font-size: 11px
-
-		&_stick
-			grid-template-rows: 195px repeat(14,minmax(80px, 80px)) 
-			+r(576)
-				grid-template-rows: 141px repeat(14,minmax(50px, 50px))
+			+r(992)
+				font-size: 14px
 
 	&__item
 		display: grid
-		grid-template-rows: 195px repeat(31,minmax(80px, 80px))
 		box-shadow: -4px 0px 0px -3px #cccccc inset
 		text-align: center
 		+transition
@@ -1373,40 +1340,65 @@
 			background-color: #f4f4f4
 			+transition
 
-		+r(576)
-			grid-template-rows: 141px repeat(31,minmax(50px, 50px))
-
 		h4
-			border-bottom: 1px solid #cccccc
-			font-size: 22px
+			font-size: 20px
 			color: #000
-			padding-bottom: 23px
+			padding: 0 10px
 
-			+r(576)
-				font-size: 15px
-				padding-bottom: 22px
+			+r(992)
+				font-size: 16px
 
 		p
-			border-bottom: 1px solid #cccccc
-			padding: 30px 10px
 			font-size: 16px
+			min-height: 80px
+			justify-content: center
 
 			img
 				width: 20px
 
-			+r(576)
-				padding: 14px 0
+			+r(992)
 				font-size: 14px
-			
-			+r(480)
-				font-size: 12px
 
-		&_stick
-			grid-template-rows: 195px repeat(14,minmax(80px, 80px))
+	&__elem
+		height: 80px
+		display: flex
+		align-items: center
+		padding: 10px
+		border-bottom: 1px solid #cccccc
+		min-width: 140px
 
-			+r(576)
-				grid-template-rows: 141px repeat(14,minmax(50px, 50px))
+		img
+			display: block
+			margin: 0 auto
 
+		&--title
+			height: 195px
+			border-bottom: 1px solid #cccccc
+			min-width: 140px
+
+			+r(992)
+				height: 180px
+
+			a
+				display: block
+				margin-bottom: 22px
+				margin-top: 25px
+				padding: 0 10px
+
+			img
+				width: 100px
+				height: 100px
+				max-width: 90%
+
+				+r(767)
+					height: auto
+					min-width: 80px
+
+
+	&__robot
+		&_title
+			&:nth-child(3)
+				display: none
 
 .checkout
 	padding-top: 150px
@@ -1707,7 +1699,6 @@
 			margin-bottom: 20px
 			font-size: 14px
 			color: #000000
-			font-weight: 400
 
 			+r(576)
 				margin-bottom: 15px
@@ -1884,6 +1875,7 @@
 
 		h1
 			font-size: 40px
+			margin-bottom: 5px
 
 			+r(1200)
 				font-size: 35px
@@ -1914,6 +1906,7 @@
 			max-width: 100%
 
 		h4
+			font-family: $f_title
 			color: #128CDB
 			font-size: 30px
 
@@ -2020,6 +2013,7 @@
 		padding-bottom: 20px
 
 	&__title
+		font-family: $f_title
 		color: #079ad3
 		text-align: center
 		margin-bottom: 20px
@@ -2033,10 +2027,13 @@
 			font-size: 18px
 
 	p
+		font-family: $proxima
 		text-align: center
 		color: #626262
 		margin-bottom: 50px
 		font-weight: 400
+		line-height: 1.5
+		letter-spacing: .01em
 
 		+r(1200)
 			margin-bottom: 30px
@@ -2077,6 +2074,9 @@
 
 		+r(480)
 			min-width: 280px
+
+		p
+			font-family: $roboto
 
 		b
 			position: absolute
@@ -2172,6 +2172,7 @@
 			padding: 5% 0
 
 		h2
+			font-family: $f_title
 			margin-bottom: 15px
 			font-size: 30px
 			color: #079ad3
@@ -2192,6 +2193,7 @@
 					display: none
 
 		p
+			font-family: $proxima
 			color: #fff
 			line-height: 24px
 			margin-bottom: 10px
@@ -2426,6 +2428,7 @@
 		img
 			width: 100%
 
+
 //----tabs-main-page----
 .parameterspage
 
@@ -2567,6 +2570,7 @@
 				+r(576)
 					font-size: 14px
 
+
 //----another-block----
 .aboutm
 	background: #f3f3f3
@@ -2597,24 +2601,25 @@
 			padding: 5% 15px
 
 	h2
-			margin-bottom: 30px
-			font-size: 30px
-			color: #079ad3
-			margin-left: 10%
+		margin-bottom: 30px
+		font-size: 48px
+		color: #079ad3
+		margin-left: 10%
+		font-family: $proxima
 
-			+r(1200)
-				margin-left: 5%
-				font-size: 22px
+		+r(1200)
+			margin-left: 5%
+			font-size: 22px
 
-			+r(992)
-				font-size: 20px
-				margin-bottom: 10px
-				text-align: center
-				margin-left: 0
+		+r(992)
+			font-size: 20px
+			margin-bottom: 10px
+			text-align: center
+			margin-left: 0
 
-			+r(576)
-				font-size: 18px
-				text-align: center
+		+r(576)
+			font-size: 18px
+			text-align: center
 
 	&__item
 		display: flex
@@ -2660,6 +2665,7 @@
 			width: 100%
 
 		h4
+			font-family: $proxima
 			font-size: 20px
 			margin-bottom: 5px
 
@@ -2671,6 +2677,7 @@
 				margin-bottom: 0
 
 		p
+			font-family: $proxima
 			+r(992)
 				color: #fff
 
@@ -3563,3 +3570,9 @@
 		max-width: 200px !important
 
 
+.woocommerce-Price-currencySymbol
+	font-weight: 400
+
+.woocommerce-Price-amount
+	font-family: $f_title
+	font-weight: 700

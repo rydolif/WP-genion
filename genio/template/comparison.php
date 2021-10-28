@@ -13,38 +13,38 @@
 			<div class="comparison__grid">
 
 				<div class="comparison__filter">
-					<h4>Модель</h4>
-					<p>Автоматический<br> возврат на базу</p>
-					<p>Система анти-<br> столкновения</p>
-					<p>Система анти-<br> падения</p>
-					<p>Система анти-<br> путаница</p>
-					<p>Уборка по<br> расписанию</p>
-					<p>Управление<br> с пульта</p>
-					<p>Распознавание<br> грязных участков</p>
-					<p>Адаптация<br> к пространству</p>
-					<p>Голосовые<br> сообщения</p>
-					<p>Двойная фильтрация <br>воздуха</p>
-					<p>Наличие навигации<br> vSLAM</p>
-					<p>Наличие навигации<br> LIDAR</p>
-					<p>Наличие<br> гироскпопа</p>
-					<p>Виртуальная стена</p>
-					<p>Магнитная лента</p>
-					<p>Управление<br> со смартфона</p>
-					<p>Автомат. увелич.<br> мощности на коврах</p>
-					<p>Влажная уборка</p>
-					<p>Тип щетки</p>
-					<p>Емкость контей-<br> нера для пыли</p>
-					<p>Емкость контей-<br> нера для жидкости</p>
-					<p>Батарея</p>
-					<p>Площадь<br> уборки</p>
-					<p>Время работы</p>
-					<p>Время зарядки</p>
-					<p>Уровень шума</p>
-					<p>Количество<br> датчиков</p>
-					<p>Количество<br> боковых щеток</p>
-					<p>Ширина</p>
-					<p>Высота</p>
-					<p>Вес</p>
+					<h4 class="comparison__elem--title">Модель</h4>
+					<p class="comparison__elem">Автоматический<br> возврат на базу</p>
+					<p class="comparison__elem">Система анти-<br> столкновения</p>
+					<p class="comparison__elem">Система анти-<br> падения</p>
+					<p class="comparison__elem">Система анти-<br> путаница</p>
+					<p class="comparison__elem">Уборка по<br> расписанию</p>
+					<p class="comparison__elem">Управление<br> с пульта</p>
+					<p class="comparison__elem">Распознавание<br> грязных участков</p>
+					<p class="comparison__elem">Адаптация<br> к пространству</p>
+					<p class="comparison__elem">Голосовые<br> сообщения</p>
+					<p class="comparison__elem">Двойная фильтрация <br>воздуха</p>
+					<p class="comparison__elem">Наличие навигации<br> vSLAM</p>
+					<p class="comparison__elem">Наличие навигации<br> LIDAR</p>
+					<p class="comparison__elem">Наличие<br> гироскпопа</p>
+					<p class="comparison__elem">Виртуальная стена</p>
+					<p class="comparison__elem">Магнитная лента</p>
+					<p class="comparison__elem">Управление<br> со смартфона</p>
+					<p class="comparison__elem">Автомат. увелич.<br> мощности на коврах</p>
+					<p class="comparison__elem">Влажная уборка</p>
+					<p class="comparison__elem">Тип щетки</p>
+					<p class="comparison__elem">Емкость контей-<br> нера для пыли</p>
+					<p class="comparison__elem">Емкость контей-<br> нера для жидкости</p>
+					<p class="comparison__elem">Батарея</p>
+					<p class="comparison__elem">Площадь<br> уборки</p>
+					<p class="comparison__elem">Время работы</p>
+					<p class="comparison__elem">Время зарядки</p>
+					<p class="comparison__elem">Уровень шума</p>
+					<p class="comparison__elem">Количество<br> датчиков</p>
+					<p class="comparison__elem">Количество<br> боковых щеток</p>
+					<p class="comparison__elem">Ширина</p>
+					<p class="comparison__elem">Высота</p>
+					<p class="comparison__elem">Вес</p>
 				</div>
 
 				<?php if( have_rows('tovar') ): ?>
@@ -87,113 +87,113 @@
 					?>
 
 					<div class="comparison__item">
-						<div class="comparison__img">
+						<div class="comparison__elem--title comparison__img">
 							<a href="#"><img src="<?php echo $img; ?>" alt=""></a>
 							<h4><?php echo $name; ?></h4>
 						</div>
-						<p>
+						<p class="comparison__elem">
 							<?php if($return_to_base){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($anti_collision){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($anti_fall){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($anti_confusion){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($cleaning_by_timetable){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($control_from_the_remote){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($recognition_dirty_areas){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($adaptation_to_space){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($voice_messages){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($double_filtration_air){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($availability_of_navigation_vslam){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($availability_of_navigation_lidar){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($availability_gyroscopa){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($virtual_wall){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($magnetic_tape){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($control_from_smartphone){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($machine_increase_power_on_carpets){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p>
+						<p class="comparison__elem">
 							<?php if($wet_cleaning){ ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 							<?php } ?>
 						</p>
-						<p><?php echo $brush_type; ?></p>
-						<p><?php echo $dust_container_capacity; ?></p>
-						<p><?php echo $liquid_container_capacity; ?></p>
-						<p><?php echo $battery; ?></p>
-						<p><?php echo $square_cleaning; ?></p>
-						<p><?php echo $working_hours; ?></p>
-						<p><?php echo $charging_time; ?></p>
-						<p><?php echo $noise_level; ?></p>
-						<p><?php echo $quantity_sensors; ?></p>
-						<p><?php echo $quantity_side_brushes; ?></p>
-						<p><?php echo $width; ?></p>
-						<p><?php echo $height; ?></p>
-						<p><?php echo $the_weight; ?></p>
+						<p class="comparison__elem"><?php echo $brush_type; ?></p>
+						<p class="comparison__elem"><?php echo $dust_container_capacity; ?></p>
+						<p class="comparison__elem"><?php echo $liquid_container_capacity; ?></p>
+						<p class="comparison__elem"><?php echo $battery; ?></p>
+						<p class="comparison__elem"><?php echo $square_cleaning; ?></p>
+						<p class="comparison__elem"><?php echo $working_hours; ?></p>
+						<p class="comparison__elem"><?php echo $charging_time; ?></p>
+						<p class="comparison__elem"><?php echo $noise_level; ?></p>
+						<p class="comparison__elem"><?php echo $quantity_sensors; ?></p>
+						<p class="comparison__elem"><?php echo $quantity_side_brushes; ?></p>
+						<p class="comparison__elem"><?php echo $width; ?></p>
+						<p class="comparison__elem"><?php echo $height; ?></p>
+						<p class="comparison__elem"><?php echo $the_weight; ?></p>
 					</div>
 
 					<?php endwhile; ?>
@@ -205,24 +205,24 @@
 
 	<section class="comparison">
 		<div class="comparison__container container">
-			<div class="comparison__grid_stick">
+			<div class="comparison__grid">
 
-				<div class="comparison__filter comparison__filter_stick">
-					<h4>Модель</h4>
-					<p>OLED дисплей</p>
-					<p>УФ лампа</p>
-					<p>Сьемный аккумулятор</p>
-					<p>Технология движения No-Effort</p>
-					<p>Увеличения мощности на рукоятке</p>
-					<p>Мощность</p>
-					<p>Мощность всасывания</p>
-					<p>Давление всасывания</p>
-					<p>Емкость контейнера <br>для пыли</p>
-					<p>Батерея</p>
-					<p>Время работы</p>
-					<p>Уровень шума</p>
-					<p>Количество насадок</p>
-					<p>Вес</p>
+				<div class="comparison__filter">
+					<h4 class="comparison__elem--title">Модель</h4>
+					<p class="comparison__elem">OLED дисплей</p>
+					<p class="comparison__elem">УФ лампа</p>
+					<p class="comparison__elem">Сьемный аккумулятор</p>
+					<p class="comparison__elem">Технология движения No-Effort</p>
+					<p class="comparison__elem">Увеличения мощности на рукоятке</p>
+					<p class="comparison__elem">Мощность</p>
+					<p class="comparison__elem">Мощность всасывания</p>
+					<p class="comparison__elem">Давление всасывания</p>
+					<p class="comparison__elem">Емкость контейнера <br>для пыли</p>
+					<p class="comparison__elem">Батерея</p>
+					<p class="comparison__elem">Время работы</p>
+					<p class="comparison__elem">Уровень шума</p>
+					<p class="comparison__elem">Количество насадок</p>
+					<p class="comparison__elem">Вес</p>
 				</div>
 
 				<?php if( have_rows('model_stick') ): ?>
@@ -246,48 +246,123 @@
 						$the_weight = get_sub_field('the_weight');
 
 					?>
-						<div class="comparison__item comparison__item_stick">
-							<div class="comparison__img">
+						<div class="comparison__item">
+							<div class="comparison__elem--title comparison__img">
 								<img src="<?php echo $img; ?>" alt="">
 								<h4><?php echo $name; ?></h4>
 							</div>
-							<p>
+							<p class="comparison__elem">
 								<?php if($oled_display){ ?>
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 								<?php } ?>
 							</p>
-							<p>
+							<p class="comparison__elem">
 								<?php if($ultraviolet_lamp){ ?>
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 								<?php } ?>
 							</p>
-							<p>
+							<p class="comparison__elem">
 								<?php if($removable_battery){ ?>
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 								<?php } ?>
 							</p>
-							<p>
+							<p class="comparison__elem">
 								<?php if($no_effort_motion_technology){ ?>
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 								<?php } ?>
 							</p>
-							<p>
+							<p class="comparison__elem">
 								<?php if($increased_power_at_the_handle){ ?>
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
 								<?php } ?>
 							</p>
-							<p><?php echo $power; ?></p>
-							<p><?php echo $suction_power; ?></p>
-							<p><?php echo $suction_pressure; ?></p>
-							<p><?php echo $container_capacity_for_dust; ?></p>
-							<p><?php echo $battery; ?></p>
-							<p><?php echo $working_hours; ?></p>
-							<p><?php echo $noise_level; ?></p>
-							<p><?php echo $number_of_attachments; ?></p>
-							<p><?php echo $the_weight; ?></p>
+							<p class="comparison__elem"><?php echo $power; ?></p>
+							<p class="comparison__elem"><?php echo $suction_power; ?></p>
+							<p class="comparison__elem"><?php echo $suction_pressure; ?></p>
+							<p class="comparison__elem"><?php echo $container_capacity_for_dust; ?></p>
+							<p class="comparison__elem"><?php echo $battery; ?></p>
+							<p class="comparison__elem"><?php echo $working_hours; ?></p>
+							<p class="comparison__elem"><?php echo $noise_level; ?></p>
+							<p class="comparison__elem"><?php echo $number_of_attachments; ?></p>
+							<p class="comparison__elem"><?php echo $the_weight; ?></p>
 						</div>
 					<?php endwhile; ?>
 				<?php endif; ?>
+			</div>
+		</div>
+	</section>
+
+	<section class="comparison">
+		<div class="comparison__container container">
+			<div class="comparison__grid comparison__robot">
+
+			<?php 
+				while ( have_rows('robot_washer') ) : the_row();
+					$product = get_sub_field('product');
+					$ID = '';
+					$title = '';
+
+					if(!empty($product->ID )){
+						$ID = $product->ID;
+					}
+					
+					$product = wc_get_product( $ID );
+					$the_title = $product->get_title();
+					$img = $product->get_image();
+			?>
+					<div class="comparison__filter comparison__robot_title">
+						<h4 class="comparison__elem--title">Модель</h4>
+
+						<?php while( have_rows('characteristics', $ID ) ): the_row(); 
+							$title = get_sub_field('title');
+						?>
+							<p class="comparison__elem"><?php echo $title; ?></p>
+						<?php endwhile; ?>
+
+						<?php while( have_rows('functions', $ID ) ): the_row(); 
+							$title = get_sub_field('title');
+						?>
+							<p class="comparison__elem"><?php echo $title; ?></p>
+						<?php endwhile; ?>
+
+						<?php while( have_rows('sizes', $ID ) ): the_row(); 
+							$title = get_sub_field('title');
+						?>
+							<p class="comparison__elem"><?php echo $title; ?></p>
+						<?php endwhile; ?>
+					</div>
+
+					<div class="comparison__item">
+						<div class="comparison__img comparison__elem--title">
+							<?php echo $img; ?>
+							<h4><?php echo $the_title; ?></h4>
+						</div>
+
+						<?php while( have_rows('characteristics', $ID ) ): the_row(); 
+								$value = get_sub_field('value');
+							?>
+								<p class="comparison__elem"><?php echo $value; ?></p>
+							<?php endwhile; ?>
+
+							<?php while( have_rows('functions', $ID ) ): the_row(); 
+								$title = get_sub_field('title');
+							?>
+								<p class="comparison__elem">
+									<?php if ($title) { ?>
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/checked.png" alt="">
+									<?php } ?>
+								</p>
+							<?php endwhile; ?>
+
+							<?php while( have_rows('sizes', $ID ) ): the_row(); 
+								$value = get_sub_field('value');
+							?>
+								<p class="comparison__elem"><?php echo $value; ?></p>
+							<?php endwhile; ?>
+					</div>
+
+			<?php endwhile; ?>
+				
 			</div>
 		</div>
 	</section>
