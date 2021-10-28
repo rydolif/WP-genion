@@ -51,7 +51,6 @@
 					</p>
 					<div class="bannerpage__buy">
 						<button class="btn btn--page_buy ajax_add_to_cart add_to_cart_button single_add_to_cart_button" data-product_id="<?php the_ID(); ?>">Купить</button>
-						<a href="#" class="modal__buy">Быстрый заказ</a>
 						<?php echo do_shortcode( "[viewBuyButton id='$id']" ); ?>
 					</div>
 	
@@ -85,29 +84,35 @@
 			</section>
 		<?php endif; ?>
 
-		<?php 
-			$info_block = get_field('info_block');
-			if ($info_block) { 
+		<?php if( have_rows('info_block') ): ?>
+			<?php while( have_rows('info_block') ): the_row();
+				$one = get_sub_field('one');
+				$two = get_sub_field('two');
 			?>
-			<section class="benefitspage">
-				<div class="benefitspage__container container">
-					<div class="benefitspage__block">
-						<div class="benefitspage__text">
-							<div class="benefitspage__img">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/l800-block.png" alt="">
+				<?php if($one) { ?>
+					<?php if($two) { ?>
+						<section class="benefitspage">
+							<div class="benefitspage__container container">
+								<div class="benefitspage__block">
+									<div class="benefitspage__text">
+										<div class="benefitspage__img">
+											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/l800-block.png" alt="">
+										</div>
+										<p><?php echo $one; ?></p>
+									</div>
+									<div class="benefitspage__text">
+										<div class="benefitspage__img">
+											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/l800-block1.png" alt="">
+										</div>
+										<p><?php echo $two; ?></p>
+									</div>
+								</div>
 							</div>
-							<p>Спасает от<br> шерсти домашних животных</p>
-						</div>
-						<div class="benefitspage__text">
-							<div class="benefitspage__img">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/l800-block1.png" alt="">
-							</div>
-							<p>Экономит время</p>
-						</div>
-					</div>
-				</div>
-			</section>
-		<?php } ?>
+						</section>
+					<?php } ?>
+				<?php } ?>
+			<?php endwhile; ?>
+		<?php endif; ?>
 
 		<?php if( have_rows('operating_modes') ): ?>
 			<?php while( have_rows('operating_modes') ): the_row();
