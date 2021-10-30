@@ -204,9 +204,9 @@
 		<?php if( get_field('allrobot') ): ?>
 			<section class="allrobot">
 				<div class="allrobot__container container">
-					<a href="<?php echo get_home_url(); ?>/sravnenie"><h2 class="h2 allrobot__title">Сравнение роботов</h2></a>
-					<a href="<?php echo get_home_url(); ?>/sravnenie"><h3 class="h3 allrobot__subtitle">Найди свой идеал</h3></a>
-					<a href="<?php echo get_home_url(); ?>/sravnenie"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/product.png" alt=""></a>
+					<a href="<?php echo get_home_url(); ?>/vacuum-cleaners-comparison"><h2 class="h2 allrobot__title">Сравнение роботов</h2></a>
+					<a href="<?php echo get_home_url(); ?>/vacuum-cleaners-comparison"><h3 class="h3 allrobot__subtitle">Найди свой идеал</h3></a>
+					<a href="<?php echo get_home_url(); ?>/vacuum-cleaners-comparison"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/product.png" alt=""></a>
 				</div>
 			</section>
 		<?php endif; ?>
@@ -214,9 +214,9 @@
 		<?php if( get_field('magic_all') ): ?>
 			<section class="allrobot">
 				<div class="allrobot__container container">
-					<a href="<?php echo get_home_url(); ?>/sravnenie"><h2 class="h2 allrobot__title">Сравнение пылесосов</h2></a>
-					<a href="<?php echo get_home_url(); ?>/sravnenie"><h3 class="h3 allrobot__subtitle">Найди свой идеал</h3></a>
-					<a href="<?php echo get_home_url(); ?>/sravnenie"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/product2.png" alt=""></a>
+					<a href="<?php echo get_home_url(); ?>/upright-cleaners-comparison"><h2 class="h2 allrobot__title">Сравнение пылесосов</h2></a>
+					<a href="<?php echo get_home_url(); ?>/upright-cleaners-comparison"><h3 class="h3 allrobot__subtitle">Найди свой идеал</h3></a>
+					<a href="<?php echo get_home_url(); ?>/upright-cleaners-comparison"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/product2.png" alt=""></a>
 				</div>
 			</section>
 		<?php endif; ?>
@@ -224,9 +224,9 @@
 		<?php if( get_field('robot_window_cleaner') ): ?>
 			<section class="allrobot">
 				<div class="allrobot__container container">
-					<a href="<?php echo get_home_url(); ?>/sravnenie"><h2 class="h2 allrobot__title">Сравнение роботов</h2></a>
-					<a href="<?php echo get_home_url(); ?>/sravnenie"><h3 class="h3 allrobot__subtitle">Найди свой идеал</h3></a>
-					<a href="<?php echo get_home_url(); ?>/sravnenie"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/product3.png" alt=""></a>
+					<a href="<?php echo get_home_url(); ?>/window-cleaners-comparison"><h2 class="h2 allrobot__title">Сравнение роботов</h2></a>
+					<a href="<?php echo get_home_url(); ?>/window-cleaners-comparison"><h3 class="h3 allrobot__subtitle">Найди свой идеал</h3></a>
+					<a href="<?php echo get_home_url(); ?>/window-cleaners-comparison"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/product3.png" alt=""></a>
 				</div>
 			</section>
 		<?php endif; ?>
