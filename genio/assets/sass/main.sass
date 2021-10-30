@@ -677,7 +677,7 @@
 		&--full
 			width: 100%
 			padding-top: 120px
-			padding-bottom: 50px
+			padding-bottom: 60px
 			background: rgb(248, 248, 248)
 
 			+r(576)
@@ -883,53 +883,55 @@
 	+r(992)
 		padding-bottom: 15px
 
-	img
-		width: 100%
-		height: auto
-		margin-bottom: 24px
+	&__container
 
-		+r(767)
-			margin-bottom: 15px
+		img
+			width: 100%
+			height: auto
+			margin-bottom: 24px
 
-	ul
-		list-style: disc
-		margin-left: 20px
-		margin-bottom: 24px
+			+r(767)
+				margin-bottom: 15px
 
-		+r(767)
-			margin-bottom: 15px
+		ul
+			list-style: disc
+			margin-left: 20px
+			margin-bottom: 24px
+
+			+r(767)
+				margin-bottom: 15px
+
+			li
+				font-size: 16px
+				margin-bottom: 15px
 
 		li
 			font-size: 16px
-			margin-bottom: 15px
+			margin-bottom: 24px
+			font-weight: 700
 
-	li
-		font-size: 16px
-		margin-bottom: 24px
-		font-weight: 700
+			+r(767)
+				margin-bottom: 15px
 
-		+r(767)
-			margin-bottom: 15px
+		h2
+			font-size: 22px
+			margin-bottom: 24px
 
-	h2
-		font-size: 22px
-		margin-bottom: 24px
+			+r(767)
+				margin-bottom: 15px
 
-		+r(767)
-			margin-bottom: 15px
+		p
+			font-size: 16px
+			margin-bottom: 24px
+			text-align: justify
+			line-height: 30px
 
-	p
-		font-size: 16px
-		margin-bottom: 24px
-		text-align: justify
-		line-height: 30px
+			+r(767)
+				margin-bottom: 15px
+				line-height: 25px
 
-		+r(767)
-			margin-bottom: 15px
-			line-height: 25px
-
-	a
-		color: #128cdb
+		a
+			color: #128cdb
 
 
 .contacts
@@ -1102,6 +1104,9 @@
 			text-align: center
 			font-size: 24px
 			margin-bottom: 50px
+
+	.amount
+		font-weight: 400
 
 
 .tabs

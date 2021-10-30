@@ -37,7 +37,7 @@
 				<div>
 					<?php if( have_rows('tabs__list') ): ?>
 						<?php while( have_rows('tabs__list') ): the_row(); ?>
-						
+						<?php $title = get_sub_field('title'); ?>
 						<div class="tabs__wrap">
 							<h2>Аксессуары для <?php echo $title; ?></h2>
 
