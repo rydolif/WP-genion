@@ -48,7 +48,8 @@ function custom_override_checkout_fields( $fields ) {
 	$fields['order']['order_comments']['placeholder'] = '';
 
 	$fields['billing']['billing_first_name']['label'] = 'ФИО';
-	$fields['billing']['billing_city']['label'] = 'Город';
+	$fields['billing']['billing_city']['label'] = 'Адрес';
+	$fields['billing']['billing_address_1']['label'] = 'Город';
 
 	$fields['billing']['billing_address_1']['placeholder'] = '';
 
@@ -60,7 +61,7 @@ function estore_woocommerce_custom_checkout_billing_fields( $address_fields, $co
 	$address_fields['billing_first_name']['class'] = array( 'form__item' );
 	$address_fields['billing_last_name']['class'] = array( 'form__item' );
 	$address_fields['billing_city']['class'] = array( 'form__item form__place' );
-	$address_fields['billing_address_1']['class'] = array( 'form__item' );
+	$address_fields['billing_address_1']['class'] = array( 'form__item_row' );
 	$address_fields['billing_phone']['class'] = array( 'form__item_row' );
 	$address_fields['billing_email']['class'] = array( 'form__item_row' );
 	return $address_fields;

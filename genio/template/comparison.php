@@ -213,7 +213,7 @@
 						<h4 class="comparison__elem--title">Модель</h4>
 						<p class="comparison__elem">OLED дисплей</p>
 						<p class="comparison__elem">УФ лампа</p>
-						<p class="comparison__elem">Сьемный аккумулятор</p>
+						<p class="comparison__elem">Съемный аккумулятор</p>
 						<p class="comparison__elem">Технология движения No-Effort</p>
 						<p class="comparison__elem">Увеличения мощности на рукоятке</p>
 						<p class="comparison__elem">Мощность</p>

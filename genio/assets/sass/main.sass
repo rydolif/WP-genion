@@ -299,14 +299,6 @@
 .active_menu
 	color: #999 !important
 
-.header__cart_quantity--active
-	animation: 2s linear running header__cart_quantity--active
-
-@keyframes header__cart_quantity--active
-	0%
-		background-color: $accent
-	100%
-		background-color: #fff
 
 //----index-page----
 .header
@@ -461,6 +453,14 @@
 			width: 20px
 			top: -11px
 			left: 18px
+			background-color: #fff
+			animation: .5s linear running header__cart_quantity--active
+
+			@keyframes header__cart_quantity--active
+				0%
+					background-color: $accent
+				100%
+					background-color: #fff
 
 	&__mincart, .widget_shopping_cart
 		position: absolute
@@ -892,6 +892,9 @@
 	+r(992)
 		padding-bottom: 15px
 
+	input
+		padding: 0 5%
+
 	&__container
 
 		img
@@ -910,17 +913,9 @@
 			+r(767)
 				margin-bottom: 15px
 
-			li
-				font-size: 16px
-				margin-bottom: 15px
-
 		li
 			font-size: 16px
-			margin-bottom: 24px
-			font-weight: 700
-
-			+r(767)
-				margin-bottom: 15px
+			margin-bottom: 15px
 
 		h2
 			font-size: 22px
@@ -953,12 +948,9 @@
 	h3
 		font-family: $f_title
 
-	iframe
-		width: 100%
-		height: 400px
-
-		+r(992)
-			height: 300px
+	input, textarea
+		padding-left: 5% !important
+		padding-right: 5% !important
 
 	&__banner
 			width: 100%
@@ -2032,7 +2024,8 @@
 		padding-bottom: 20px
 
 	&__title
-		color: #079ad3
+		font-family: $f_title
+		color: #1e1e1e
 		text-align: center
 		margin-bottom: 20px
 		font-size: 28px
@@ -2477,7 +2470,7 @@
 	&__main
 		display: flex
 		justify-content: space-between
-		margin-right: 20%
+		margin-right: 22%
 		border-bottom: 1px solid #e6e6e6
 		margin-top: 15px
 		&:last-child
@@ -2989,7 +2982,7 @@
 	&__item
 		position: relative
 		padding: 0 !important
-		margin-bottom: 25px !important
+		margin-bottom: 20px !important
 		width: 100%
 
 		+r(576)
@@ -3200,12 +3193,10 @@
 	right: 0
 	bottom: 0
 	overflow: hidden
-	/* фоновый цвет */
 	background: #FFF
 	z-index: 1001
 
-
-	&__image 
+	&__image
 		position: relative
 		top: 50%
 		left: 50%
@@ -3309,9 +3300,11 @@
 			text-align: center !important
 			border: 1px solid #fff !important
 			border-radius: 50px !important
-			padding: 5px 15px !important
+			padding: 0 15px !important
 			background: transparent !important
 			font-weight: 400 !important
+			height: 35px !important
+			line-height: 35px !important
 			+transition
 
 			&:hover
@@ -3604,7 +3597,6 @@
 
 	p
 		margin-bottom: 30px
-		text-align: center
 
 
 .fa.fa-times-circle-o
