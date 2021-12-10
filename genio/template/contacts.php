@@ -14,6 +14,8 @@
 			<a href="<?php echo get_home_url(); ?>/nashi-dilery">Наши дилеры</a>
 		</div>
 
+		<div class="border"></div>
+
 		<div class="container">
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

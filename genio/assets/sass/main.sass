@@ -373,7 +373,6 @@
 					width: 100%
 
 			a
-				@extend .link
 				font-size: 16px
 				color: $dark
 				letter-spacing: 0.25px
@@ -454,8 +453,8 @@
 			position: absolute
 			text-align: center
 			width: 20px
-			top: -11px
-			left: 18px
+			top: -9px
+			left: 15px
 			background-color: #fff
 			animation: .5s linear running header__cart_quantity--active
 
@@ -680,6 +679,7 @@
 			.genio__price
 				opacity: 1
 
+
 		&--full
 			width: 100%
 			padding-top: 120px
@@ -701,31 +701,27 @@
 				max-width: 290px
 
 	&__price
-		font-size: 22px
-		opacity: 0
-		cursor: pointer
 		display: flex
 		justify-content: flex-end
-		align-items: baseline
-		gap: 10px
+		align-items: flex-end
+		gap: 20px
 		margin-left: auto
 		margin-right: 0
 		background: transparent
 		border: none
+		font-size: 22px
+		opacity: 0
+		cursor: pointer
 		+transition
 
 		+r(767)
 			opacity: 1
-
-		&:hover
-			color: $accent !important
-
-			svg, path
-				fill: $accent !important
+			gap: 10px
 
 		svg
 			width: 30px
 			height: 30px
+			margin-bottom: 3px
 
 		path
 			+transition
@@ -733,7 +729,7 @@
 	form
 		@extend .genio__price
 		position: relative
-		padding-right: 5%
+		padding-right: 1%
 		flex-wrap: wrap
 
 		button
@@ -795,16 +791,10 @@
 		align-items: center
 
 		&:hover
-			p
-				color: $accent
-
 			img
 				transform: scale(0.9)
 
 		&:active
-			p
-				color: $accent
-
 			img
 				transform: scale(1.05)
 
@@ -1723,7 +1713,7 @@
 
 	&__list
 		h4
-			margin-bottom: 20px
+			margin-bottom: 25px
 			font-size: 14px
 			color: #000000
 			font-weight: 400
@@ -1741,6 +1731,9 @@
 			font-size: 14px
 			color: #626262
 			font-weight: 400
+
+			&::before
+				bottom: 2px
 
 	&__logo
 		display: block
@@ -2064,7 +2057,7 @@
 		color: #626262
 		margin-bottom: 50px
 		font-weight: 400
-		line-height: 1.5
+		line-height: 24px
 		letter-spacing: .01em
 
 		+r(1200)
@@ -2483,6 +2476,7 @@
 		img
 			width: 100%
 			height: 100%
+			margin-bottom: 20px
 
 	&__line
 		border-bottom: 1px solid #e6e6e6
@@ -3308,6 +3302,9 @@
 .caldera-grid .form-group,
 .cf-color-picker .form-group
 	margin-bottom: 25px !important
+
+.caldera-grid .form-control
+	border: 0 !important
 
 .added_to_cart
 	display: none !important
